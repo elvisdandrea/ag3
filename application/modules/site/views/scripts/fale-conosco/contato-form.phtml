@@ -1,0 +1,63 @@
+<div class="container">
+    <?php echo $this->partial('index/busca_form.phtml', array(
+        'listas' => $this->listas,
+        'innerDivClass' => 'pesquisa-imoveis',
+        'buttonText' => 'Buscar novamente',
+    )); ?>
+
+    <section class="resultado-busca">
+        <div class="title-section">
+            <h2 class="title-section-text">SOLICITAR CONTATO</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-centered">
+                <form id="contato-imovel" action="<?php echo $this->serverUrl() . BASEDIR; ?>/fale-conosco" method="post">
+                    <div class="form-contato">
+                        <div class="row">
+                            <div class="col-xs-12 form-group">
+                                <label for="nome">Nome <span class="red">*</span></label>
+                                <?php echo $this->form->nome?>
+                            </div>
+                            <div class="col-xs-12 col-md-6 form-group">
+                                <label for="email">E-mail <span class="red">*</span></label>
+                                <?php echo $this->form->email?>
+                            </div>
+                            <div class="col-xs-12 col-md-6 form-group">
+                                <label for="ddd">Telefone <span class="red">*</span></label>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <?php echo $this->form->fone?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 form-group">
+                                <label for="email">Mensagem <span class="red">*</span></label>
+                                <?php echo $this->form->mensagem?>
+                            </div>
+                            <input type="hidden" name="subject" value="contato"/>
+                            <div class="col-xs-12 form-group text-right">
+                                <input type="hidden" name="imovel" value="<?php echo $this->imovel['Codigo']; ?>"/>
+                                <input type="submit" value="Enviar" class="btn">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div id="contato-resposta" class="modal fade" role="dialog" style="display: none;">
+    <div class="modal-dialog">
+        <div class="form-contato">
+            <div class="title-view">
+                <h3>Mensagem Enviada</h3>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    <h4 id="message"></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,206 @@
+
+//
+// Base
+//
+
+.header {
+  background: rgb(221,221,221);
+  background: -moz-linear-gradient(top,  rgba(221,221,221,1) 0%, rgba(255,255,255,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(221,221,221,1) 0%,rgba(255,255,255,1) 100%);
+  background: linear-gradient(to bottom,  rgba(221,221,221,1) 0%,rgba(255,255,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddddd', endColorstr='#ffffff',GradientType=0 );
+  padding-bottom: 20px;
+  position: relative;
+  z-index: 1000;
+
+  @media (min-width: $screen-md-min) {
+    padding-bottom: 0;
+  }
+}
+
+
+
+//
+// Logo
+//
+
+.logo {
+  margin: 20px 0;
+  text-align: center;
+  width: 100%;
+
+  img {
+    max-width: 180px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    float: left;
+    width: auto;
+  }
+}
+
+
+
+//
+// Social
+//
+
+.social {
+  text-align: center;
+
+  span {
+    display: none;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  @media (min-width: $screen-md-min) {
+    float: right;
+
+    a {
+      border-top: 3px solid transparent;
+      color: $blue;
+      display: inline-block;
+      float: left;
+      height: 120px;
+      padding: 28px 0 20px;
+      width: 80px;
+      text-align: center;
+      text-decoration: none;
+      position: relative;
+
+      &:hover {
+        background-color: #ddd;
+        border-color: #142c64;
+
+        span,
+        &:before,
+        &:after {
+          display: block;
+        }
+      }
+
+      &:before {
+        background-color: #00abd3;
+        content: '';
+        display: none;
+        height: 3px;
+        width: 100%;
+        position: absolute;
+        top: 1px;
+      }
+
+      &:after {
+        background-color: $green;
+        content: '';
+        display: none;
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        top: 6px;
+      }
+    }
+  }
+}
+
+// Item
+
+.social-item i {
+  border: 1px solid $green;
+  border-radius: 100%;
+  display: inline-block;
+  font-size: 2.7rem;
+  line-height: 1;
+  height: 35px;
+  padding: 3px;
+  margin: 0 2px;
+  text-decoration: none;
+  width: 35px;
+  text-align: center;
+
+  i {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  @media (min-width: $screen-md-min) {
+    height: 38px;
+    width: 38px;
+    padding: 4px 4px 4px 5px;
+  }
+}
+
+.social-facebook i    { color: #3a589b; }
+.social-twitter i     { color: #1cb7eb; }
+.social-youtube i     { color: #e02f2f; }
+.social-instagram i   { color: #a36d4e; }
+.social-phone i       { color: #152d65; }
+.social-favorito i    { color: #152d65; }
+.social-whatsapp i    { color: #1da110; }
+
+
+
+//
+// Menu
+//
+
+.menu {
+  background: rgb(255,255,255);
+  background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(221,221,221,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(221,221,221,1) 100%);
+  background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(221,221,221,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dddddd',GradientType=0 );
+  box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+  display: none;
+  position: absolute;
+  top: 185px;
+  width: 100%;
+  z-index: 999;
+
+  ul {
+    margin: 0;
+    padding: 15px 0;
+  }
+
+  &.open {
+    display: block;
+  }
+
+  @media (min-width: $screen-md-min) {
+    border-top: 1px solid #cbcbcb;
+    border-bottom: 1px solid #b0b0b0;
+    display: block;
+    position: relative;
+    top: auto;
+    text-align: center;
+
+    box-shadow: inset 0 -3px 30px rgba(0,0,0,0.1), inset 0 3px 30px rgba(0,0,0,0.1);
+  }
+}
+
+// Item
+
+.menu-item {
+  list-style: none;
+
+  a {
+    color: $blue;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+  }
+
+  &.menu-active a,
+  a:hover {
+    color: #00ABD3;
+  }
+
+  @media (min-width: $screen-md-min) {
+    display: inline-block;
+    padding: 0 30px;
+
+    a {
+      padding: 0;
+    }
+  }
+}

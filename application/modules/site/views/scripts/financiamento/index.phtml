@@ -1,0 +1,44 @@
+<div class="container">
+    <!--PESQUISA-->
+    <?php echo $this->partial('index/busca_form.phtml', array(
+        'listas' => $this->listas,
+        'innerDivClass' => 'pesquisa-home',
+        'buttonText' => 'Buscar Imóveis',
+    )); ?>
+    <!--/PESQUISA-->
+    <section class="resultado-busca">
+        <div class="col-lg-12 col-md-8 col-sm-10 col-xs-12">
+
+
+            <div class="title-section">
+                <h2 class="title-section-text">Simule seu Financiamento</h2>
+                <h4 class="title-section-subtitle">Escolha seu Agente Financeiro</h4>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 col-md-offset-5 text-center">
+
+                    <ul class="financiamento">
+                        <li>
+                            <a href="https://www.credipronto.com.br/">
+                                <img src="<?php echo $this->serverUrl() . BASEDIR; ?>/res/imgs/credipronto.png" height="160" width="160">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www8.caixa.gov.br/siopiinternet/simulaOperacaoInternet.do?method=iniciarCasoDeUsoSiteFeirao&isVoltar=true&vaEnquadra=10407">
+                                <img src="<?php echo $this->serverUrl() . BASEDIR; ?>/res/imgs/caixa.png" height="160" width="160">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.banrisul.com.br/brz/link/brzw01hw.asp?css=bob&secao_id=1083">
+                                <img src="<?php echo $this->serverUrl() . BASEDIR; ?>/res/imgs/banrisul.png" height="160" width="160">
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</div>

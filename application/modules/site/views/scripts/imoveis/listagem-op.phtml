@@ -1,0 +1,121 @@
+<div class="container">
+    <?php echo $this->partial('index/busca_form.phtml', array(
+        'listas' => $this->listas,
+        'innerDivClass' => 'pesquisa-imoveis',
+        'buttonText' => 'Buscar novamente',
+    )); ?>
+</div>
+<div class="op-banner">
+    <div class="op-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 op-box">
+                    <div class="op-title">
+                        <h2>Imóveis com descontos reais e grandes oportunidades</h2>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 op-box-img">
+                    <div class="img-responsive text-center">
+                        <img src="<?php echo $this->serverUrl() . BASEDIR; ?>/res/imgs/logo-oportunidade.png" alt="Oportunidades na Zona Sul de Porto Alegre" />
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 op-box">
+                    <div class="op-title">
+                        <p>CENTRAL DE ATENDIMENTO</p>
+                        <h1>3257.7777</h1>
+                        <p>DAS 8:30 ÀS 24HS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+
+    <section class="oportunidades op-list">
+
+        <ul class="list-oportunidades row">
+            <?php foreach ($this->imoveis as $widget2) :?>
+                <li class="col-xs-12 col-sm-4 oportunidades-item">
+                    <a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/detalhes/codigo/<?= $widget2['Codigo']; ?>/<?php echo $widget2['Categoria'] . '/' . $widget2['Bairro'] . (intval($widget2['Dormitorios']) > 0 ? '-' . $widget2['Dormitorios'] : '') ?>/Zona-Sul/Porto-Alegre">
+                        <div class="thumb-oportunidades">
+                            <img height="190px" src="<?php echo $widget2['FotoDestaque']; ?>" alt="<?php echo $widget2['Categoria'] . ' - ' . $widget2['Bairro']?> - Zona Sul - Porto Alegre">
+                        </div>
+                        <div class="descricao-opotunidades">
+                            <span class="descricao-oportunidades-title"><?php echo $widget2['Bairro'];?></span>
+                            <div class="descricao-opotunidades-content">
+                                <p><i class="icon-house"></i><strong> <?php echo $widget2['Categoria'];?></strong></p>
+                                <?php if ($widget2['Categoria'] == 'Terreno') : ?>
+                                    <p <?php if ($widget2['DimensoesTerreno'] == '') :?>style="visibility: hidden"<?php endif;?>><i class="icon-menu"></i> <?php echo $widget2['DimensoesTerreno'];?> m</p>
+                                    <p <?php if ($widget2['AreaTerreno'] == '') :?>style="visibility: hidden"<?php endif;?>><i class="icon-menu"></i> <?php echo $widget2['AreaTerreno'];?> m2</p>
+                                <?php else : ?>
+                                    <p <?php if ($widget2['Dormitorios'] == '') :?>style="visibility: hidden"<?php endif;?>>
+                                        <i class="icon-bed"></i>
+                                        <?php echo $widget2['Dormitorios'];?> dormitórios
+                                    </p>
+                                    <p <?php if ($widget2['Vagas'] == '') :?>style="visibility: hidden"<?php endif;?>>
+                                        <i class="icon-car"></i>
+                                        <?php echo $widget2['Vagas'];?> vagas
+                                    </p>
+                                <?php endif; ?>
+                                <p <?php if ($widget2['AreaTotal'] == '') :?>style="visibility: hidden"<?php endif;?>><i class="icon-menu"></i> <?php echo $widget2['AreaTotal'];?> m2</p>
+                                <p <?php if (intval($widget2['ValorOferta']) > 0) : ?>style="text-decoration: line-through;"<?php else :?>style="visibility: hidden;"<?php endif;?>>
+                                    <?php if (intval($widget2['ValorOferta']) > 0) : ?>De:<?php endif;?>
+                                    <strong><?php echo String::asCurrency($widget2['ValorVenda']);?></strong>
+                                </p>
+                                <p style="font-size: 18px;">
+                                    <?php if (intval($widget2['ValorOferta']) > 0) : ?>Por:<?php endif;?>
+                                    <?php echo (intval($widget2['ValorOferta']) > 0 ? String::asCurrency($widget2['ValorOferta']) : String::asCurrency($widget2['ValorVenda']) ) ;?>
+                                </p>
+                                <div class="ofertas">
+                                <span class="oferta-especial" style="font-size: 17px">
+                                    <strong>
+                                        <?php if (intval($widget2['ValorOferta']) > 0) :
+
+                                            $save = intval($widget2['ValorVenda']) - intval($widget2['ValorOferta']);
+                                            echo 'ECONOMIZE ' . ($save / 1000) . ' MIL';
+                                            ?>
+
+                                        <?php else : ?>
+                                            OFERTA ESPECIAL
+                                        <?php endif; ?>
+                                    </strong>
+                                </span>
+                                    <span class="oferta-mais-detalhes"><strong>+</strong> DETALHES</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </section>
+    <ul class="paginacao">
+
+        <!-- Previous -->
+        <?php if(isset($this->pagination->previous)):?>
+            <?php $this->params['page'] = $this->pagination->previous?>
+            <li class="paginacao-item with-arrow"><a href="<?php echo $this->serverUrl() . BASEDIR;?>/imoveis/listagem?<?php echo http_build_query($this->params); ?>"><i class="icon-arrow-left"></i></a></li>
+        <?php else:?>
+            <li class="paginacao-item with-arrow disabled"><a href="#"><i class="icon-arrow-left"></i></a></li>
+        <?php endif;?>
+
+        <!-- Pages List -->
+        <?php foreach($this->pagination->pagesInRange as $page):?>
+            <?php if($page == $this->pagination->current):?>
+                <li class="paginacao-item"><a href="#" class="active"><?php echo $page; ?></a></li>
+            <?php else:?>
+                <?php $this->params['page'] = $page?>
+                <li class="paginacao-item"><a href="<?php echo $this->serverUrl() . BASEDIR;?>/imoveis/listagem?<?php echo http_build_query($this->params); ?>"><?php echo $page?></a></li>
+            <?php endif;?>
+        <?php endforeach;?>
+
+        <!-- Next -->
+        <?php if(isset($this->pagination->next)):?>
+            <?php $this->params['page'] = $this->pagination->next?>
+            <li class="paginacao-item with-arrow"><a href="<?php echo $this->serverUrl() . BASEDIR;?>/imoveis/listagem?<?php echo http_build_query($this->params); ?>"><i class="icon-arrow-right"></i></a></li>
+        <?php else:?>
+            <li class="paginacao-item with-arrow disabled"><a href="#"><i class="icon-arrow-right"></i></a></li>
+        <?php endif;?>
+    </ul>
+</div>

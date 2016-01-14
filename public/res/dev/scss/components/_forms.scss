@@ -1,0 +1,40 @@
+
+//
+// Campos
+//
+
+.form-control {
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 1.4rem;
+  padding: 9px;
+  width: 100%;
+
+  &:focus {
+    border-color: $green;
+    outline: none;
+  }
+
+  &.error {
+    border-color: red;
+  }
+}
+
+.form-group {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    margin-bottom: 3px;
+    font-family: Arial, sans-serif;
+    font-size: 1.4rem;
+  }
+}
+
+textarea.form-control {
+  height: 150px;
+  resize: none;
+}

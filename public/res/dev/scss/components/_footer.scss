@@ -1,0 +1,200 @@
+
+//
+// Base
+//
+
+.footer {
+  background: url("../imgs/bg-footer.png") no-repeat center;
+  background-size: cover;
+  margin-top: 90px;
+  padding-bottom: 30px;
+
+  h3 {
+    font-size: 1.6rem;
+    font-weight: normal;
+
+    i {
+      color: $blue;
+      font-size: 3rem;
+    }
+  }
+
+  .row:first-child {
+    margin-bottom: 50px;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    padding-top: 30px;
+  }
+}
+
+// Menu
+
+.menu-footer {
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+    line-height: 2.4;
+  }
+
+  a {
+    color: #777;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+
+    i {
+      color: $blue;
+      font-size: 1.4rem;
+    }
+  }
+}
+
+
+//
+// Newsletter
+//
+
+.newsletter {
+  label {
+    font-size: 1.6rem;
+    color: #777;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-control {
+    border-width: 1px;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.15);
+  }
+
+  .form-control,
+  .btn {
+    border-radius: 8px;
+  }
+
+  .btn {
+    width: 130px;
+  }
+}
+
+
+//
+// Social
+//
+
+.social-footer {
+  span {
+    line-height: 2.4;
+  }
+
+  i {
+    font-size: 2.8rem;
+    vertical-align: middle;
+    margin-left: 5px;
+  }
+
+  a {
+    font-size: 1.6rem;
+    color: #777;
+
+    &:hover {
+      text-decoration: none;
+      opacity: .8;
+    }
+  }
+}
+
+
+//
+// Endereço
+//
+
+.address-imo {
+  color: #777;
+  text-align: center;
+
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+  }
+
+  address {
+    font-style: normal;
+    font-size: 1.4rem;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    text-align: left;
+
+    img {
+      float: left;
+      margin-right: 5px;
+    }
+  }
+}
+
+.fone {
+  margin-top: 3px;
+  font-size: 1.8rem;
+}
+
+
+.number-whats {
+  margin-top: 30px;
+
+  span {
+    font-size: 3rem;
+    vertical-align: top;
+  }
+
+  div {
+    vertical-align: top;
+    padding: 5px 0 0 3px;
+    font-size: 1.6rem;
+  }
+}
+
+
+//
+// Copyright
+//
+
+.copyright {
+  background: rgb(17,37,83);
+  background: -moz-linear-gradient(top,  rgba(17,37,83,1) 0%, rgba(49,79,149,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(17,37,83,1) 0%,rgba(49,79,149,1) 100%);
+  background: linear-gradient(to bottom,  rgba(17,37,83,1) 0%,rgba(49,79,149,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#112553', endColorstr='#314f95',GradientType=0 );
+  color: #fff;
+
+  h6 {
+    font-size: 1.3rem;
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    margin: 15px 0;
+  }
+}
+
+.gravi {
+  font-size: 1.3rem;
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  margin-bottom: 15px;
+
+  img {
+    vertical-align: middle;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin-bottom: 0;
+  }
+}

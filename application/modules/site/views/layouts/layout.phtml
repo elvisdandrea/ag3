@@ -1,0 +1,25 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AG3 Imóveis - Nosso compromisso é a sua realização.</title>
+    <link rel="shortcut icon" href="<?php echo $this->serverUrl() . BASEDIR ?>/res/imgs/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php echo $this->serverUrl() . BASEDIR ?>/res/imgs/favicon.ico" type="image/x-icon">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" href="<?php echo $this->serverUrl() . BASEDIR ?>/res/css/main.css">
+    <?php echo $this->headLink()?>
+
+</head>
+<body>
+
+<?php echo $this->render('header.phtml'); ?>
+
+<?php echo $this->layout()->content;?>
+
+<?php echo $this->render('footer.phtml'); ?>
+
+<script type="text/javascript" src="<?php echo $this->serverUrl() . BASEDIR ?>/res/js/main.min.js"></script>
+<?php echo $this->headScript()?>
+</body>
+</html>

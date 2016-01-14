@@ -1,0 +1,79 @@
+
+//
+// Abre/fecha menu
+//
+
+.open-menu {
+  display: block;
+  font-size: 3rem;
+  padding: 10px;
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  outline: none;
+
+  @media (min-width: $screen-md-min) {
+    display: none;
+  }
+}
+
+
+
+//
+// Padrão de botões
+//
+
+.btn {
+  background-color: $blue;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.4rem;
+  line-height: 1.3;
+  padding: 11px 10px;
+  text-align: center;
+
+  -webkit-appearance: none;
+
+  -webkit-transition: 150ms;
+  -moz-transition: 150ms;
+  transition: 150ms;
+
+  &:hover {
+    background-color: #00abd3;
+    text-decoration: none;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    font-size: 1.6rem;
+    padding: 9px 10px;
+
+    i {
+      font-size: 2.3rem;
+      vertical-align: middle;
+    }
+  }
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+@media (min-width: $screen-md-min) {
+  button[type="submit"],
+  input[type="submit"] {
+    min-width: 150px;
+  }
+}
+
+
+
+//
+// Ver mais imóveis
+//
+
+.btn-ver-mais {
+  width: 140px;
+}

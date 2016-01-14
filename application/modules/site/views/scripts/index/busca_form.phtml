@@ -1,0 +1,107 @@
+<?php
+$params = Zend_Controller_Front::getInstance()->getRequest()->getParams();
+?>
+<section class="busca">
+    <div class="container">
+        <div class="tit-section text-center">
+            <h1>Busca de imóveis</h1>
+        </div>
+        <div class="categorias">
+            <div class="row">
+                <div class="col-xs-6 categoria-item">
+                    <i class="icon-house112"></i>
+                    <a href="javascript:;" class="btn btn-block">CASAS/SOBRADOS</a>
+                </div>
+                <div class="col-xs-6 categoria-item">
+                    <i class="icon-modern13"></i>
+                    <a href="javascript:;" class="btn btn-block">COMERCIAIS</a>
+                </div>
+                <div class="col-xs-6 categoria-item">
+                    <i class="icon-city33"></i>
+                    <a href="javascript:;" class="btn btn-block">APARTAMENTOS</a>
+                </div>
+                <div class="col-xs-6 categoria-item">
+                    <i class="icon-tree30"></i>
+                    <a href="javascript:;" class="btn btn-block">TERRENOS</a>
+                </div>
+                <div class="col-xs-6 categoria-item">
+                    <i class="icon-rural32"></i>
+                    <a href="javascript:;" class="btn btn-block">SÍTIOS/ÁREAS DE TERRA</a>
+                </div>
+            </div>
+        </div>
+        <div class="form-busca">
+            <form action="#" class="row">
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                    <div class="form-group">
+                        <select name="situacao" id="situacao" class="form-control">
+                            <option value="">Situação</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                    <div class="form-group">
+                        <select name="cidade" id="cidade" class="form-control">
+                            <option value="">Cidade</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                    <div class="form-group">
+                        <select name="dormitorios" id="dormitorios" class="form-control">
+                            <option value="">Dormitórios</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                    <div class="form-group">
+                        <select name="preco-inicial" id="preco-inicial" class="form-control">
+                            <option value="">Preço de...</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                    <div class="form-group">
+                        <select name="preco-final" id="preco-final" class="form-control">
+                            <option value="">Preço até...</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                    <div class="form-group">
+                        <select name="tipo" id="tipo" class="form-control">
+                            <option value="">Tipo de Imóvel</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                    <div class="form-group">
+                        <select name="bairro" id="bairro" class="form-control">
+                            <option value="">Bairro</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                    <div class="form-group">
+                        <select name="garagem" id="garagem" class="form-control">
+                            <option value="">Garagem</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-6">
+                    <div class="form-group">
+                        <input type="text" name="codigo" id="codigo" class="form-control" placeholder="Busque por código">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-block">
+                            <i class="icon-magnifier13"></i>
+                            BUSCAR IMÓVEIS
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

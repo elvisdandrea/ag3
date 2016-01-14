@@ -1,0 +1,379 @@
+<div class="header-detalhes">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-8">
+                <div class="col-xs-6 col-sm-6 col-md-3 header-detalhes-item header-detalhes-codigo">
+                    Codigo: <strong><?php echo $this->imovel['Codigo']?></strong>
+                </div>
+                <?php if(isset($this->imovel['Bairro']) && !empty($this->imovel['Bairro'])):?>
+                    <div class="col-xs-6 col-sm-6 col-md-3 header-detalhes-item">
+                        <i class="icon-pin"></i> <?php echo $this->imovel['Bairro']?>
+                    </div>
+                <?php endif;?>
+                <div class="col-xs-6 col-sm-6 col-md-3 header-detalhes-item">
+                    <i class="icon-house"></i> <?php echo $this->imovel['Categoria']?>
+                </div>
+                <?php if(isset($this->imovel['Dormitorios']) && !empty($this->imovel['Dormitorios'])):?>
+                    <div class="col-xs-6 col-sm-6 col-md-3 header-detalhes-item">
+                        <i class="icon-bed"></i> <?php echo $this->imovel['Dormitorios']?> dormitórios
+                    </div>
+                <?php endif;?>
+                <?php if(isset($this->imovel['BanheiroSocialQtd']) && !empty($this->imovel['BanheiroSocialQtd'])):?>
+                    <div class="col-xs-6 col-sm-6 col-md-3 header-detalhes-item">
+                        <i class="icon-bath"></i> <?php echo $this->imovel['BanheiroSocialQtd']?> banheiros
+                    </div>
+                <?php endif;?>
+                <?php if(isset($this->imovel['Vagas']) && !empty($this->imovel['Vagas'])):?>
+                    <div class="col-xs-6 col-sm-6 col-md-3 header-detalhes-item">
+                        <i class="icon-car"></i> <?php echo $this->imovel['Vagas']?> garagem
+                    </div>
+                <?php endif;?>
+                <div class="col-xs-6 col-sm-6 col-md-3 header-detalhes-item">
+                    <i class="icon-dollar"></i> <?php echo String::asCurrency($this->imovel['ValorVenda'])?>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-4">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <a href="#" class="header-detalhes-social-item" title="(51) 3257-7777"><i class="icon-phone"></i> <span>(51) 3257-7777</span></a>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <a href="#" style="display: block" class="header-detalhes-social-item" title="(51) 8212-3637"><i class="icon-phone"></i> <span>(51) 8212-3637</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <!--PESQUISA-->
+    <?php echo $this->partial('index/busca_form.phtml', array(
+        'listas' => $this->listas,
+        'innerDivClass' => 'pesquisa-home',
+        'buttonText' => 'Buscar Imóveis',
+    )); ?>
+    <!--/PESQUISA-->
+    <section class="view-imovel">
+        <div class="row">
+            <div class="col-xs-12 col-lg-8">
+                <div class="col-xs-12 col-sm-12 col-lg-8">
+                    <div class="galeria-imovel">
+                        <div id="slider-imovel" class="flexslider img-grande">
+                            <ul class="slides">
+                                <?php foreach($this->imovel['Foto'] as $fotos):?>
+                                    <li>
+                                        <a href="<?php echo $fotos['Foto']?>" class="fancybox" rel="galeria-imovel">
+                                            <img src="<?php echo $fotos['Foto']?>" alt="<?php echo $this->imovel['Categoria'] . ' - ' . $this->imovel['Bairro']?>">
+                                            <span><i class="icon-search"></i></span>
+                                        </a>
+                                    </li>
+                                <?php endforeach;?>
+                            </ul>
+                        </div>
+                        <div id="carousel-imovel" class="flexslider thumb-galeria-imovel">
+                            <ul class="slides">
+                                <?php foreach($this->imovel['Foto'] as $fotos):?>
+                                    <li>
+                                        <img src="<?php echo $fotos['Foto']?>" alt="<?php echo $this->imovel['Categoria'] . ' - ' . $this->imovel['Bairro']?>">
+                                    </li>
+                                <?php endforeach;?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-lg-4">
+                    <div class="detalhes-imovel">
+                        <div class="row">
+                            <div class="col-sm-3 col-lg-12 resultado-busca-info-item">
+                                Código: <strong class="codigo-imovel"><?php echo $this->imovel['Codigo']?></strong>
+                            </div>
+                            <?php if(isset($this->imovel['Bairro']) && !empty($this->imovel['Bairro'])):?>
+                                <div class="col-sm-3 col-lg-12 resultado-busca-info-item">
+                                    <i class="icon-pin"></i> <?php echo $this->imovel['Bairro']?>
+                                </div>
+                            <?php endif;?>
+                            <div class="col-sm-3 col-lg-12 resultado-busca-info-item">
+                                <i class="icon-house"></i> <?php echo $this->imovel['Categoria']?>
+                            </div>
+                            <?php if ($this->imovel['Categoria'] == 'Terreno') : ?>
+                                <div class="col-sm-3 col-lg-12 resultado-busca-info-item">
+                                    <i class="icon-menu"></i> <?php echo $this->imovel['AreaTotal'];?> m2
+                                </div>
+                                <div class="col-sm-3 col-lg-12 resultado-busca-info-item">
+                                    <i class="icon-menu"></i> <?php echo $this->imovel['DimensoesTerreno'];?> m
+                                </div>
+                            <?php else : ?>
+                                <?php if(isset($this->imovel['Dormitorios']) && !empty($this->imovel['Dormitorios'])):?>
+                                    <div class="col-sm-3 col-lg-12 resultado-busca-info-item">
+                                        <i class="icon-bed"></i> <?php echo $this->imovel['Dormitorios'] . (intval($this->imovel['Dormitorios']) > 1 ? ' dormitórios' : ' dormitorios')?>
+                                    </div>
+                                <?php endif;?>
+                                <?php if(isset($this->imovel['BanheiroSocialQtd']) && !empty($this->imovel['BanheiroSocialQtd'])):?>
+                                    <div class="col-sm-3 col-lg-12 resultado-busca-info-item">
+                                        <i class="icon-bath"></i> <?php echo $this->imovel['BanheiroSocialQtd'] . (intval($this->imovel['BanheiroSocialQtd']) > 1 ? ' banheiros' : ' banheiro') ?>
+                                    </div>
+                                <?php endif;?>
+                                <?php if(isset($this->imovel['Vagas']) && !empty($this->imovel['Vagas'])):?>
+                                    <div class="col-sm-3 col-lg-12 resultado-busca-info-item">
+                                        <i class="icon-car"></i> <?php echo $this->imovel['Vagas'] . (intval($this->imovel['Vagas']) > 1 ? ' vagas' : ' vaga') ?>
+                                    </div>
+                                <?php endif;?>
+                            <?php endif; ?>
+                        </div>
+                        <div class="clear-both">
+                            <span class="price-busca"><?php echo String::asCurrency($this->imovel['ValorVenda'])?></span>
+                        </div>
+                    </div>
+                    <a href="<?php echo $this->serverUrl() . BASEDIR ?>/financiamento" class="btn-interesse"><i class="icon-arrow-right"></i> Simular financiamento</a>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-lg-12">
+                    <div class="view-imovel-descricao">
+                        <p><?php echo $this->imovel['Descricao']?></p>
+                    </div>
+                    <div class="title-view">
+                        <h3>Caracteristicas</h3>
+                    </div>
+                    <div class="view-imovel-descricao">
+                        <div class="row">
+                            <?php if(isset($this->imovel['Dormitorios']) && !empty($this->imovel['Dormitorios'])):?>
+                                <div class="col-xs-12 col-md-6">
+                                    <?php echo $this->imovel['Dormitorios'] . ' ' . (intval($this->imovel['Dormitorios']) > 1 ? 'dormitorios' : 'dormitorios')?>
+                                </div>
+                            <?php endif;?>
+                            <?php if(isset($this->imovel['Suites']) && !empty($this->imovel['Suites'])):?>
+                                <div class="col-xs-12 col-md-6">
+                                    <?php echo $this->imovel['Suites'] . ' ' . (intval($this->imovel['Suites']) > 1 ? 'suites' : 'suite')?>
+                                </div>
+                            <?php endif;?>
+                            <?php if(isset($this->imovel['BanheiroSocialQtd']) && !empty($this->imovel['BanheiroSocialQtd'])):?>
+                                <div class="col-xs-12 col-md-6">
+                                    <?php echo $this->imovel['BanheiroSocialQtd'] . ' ' . (intval($this->imovel['BanheiroSocialQtd']) > 1 ? 'banheiros' : 'banheiros')?>
+                                </div>
+                            <?php endif;?>
+                            <?php if(isset($this->imovel['Vagas']) && !empty($this->imovel['Vagas'])):?>
+                                <div class="col-xs-12 col-md-6">
+                                    <?php echo $this->imovel['Vagas'] . ' ' . (intval($this->imovel['Vagas']) > 1 ? 'vagas' : 'vagas')?>
+                                </div>
+                            <?php endif;?>
+                            <?php if(isset($this->imovel['AreaUtil']) && !empty($this->imovel['AreaUtil'])):?>
+                                <div class="col-xs-12 col-md-6">
+                                    Área util: <?php echo $this->imovel['AreaUtil']?>
+                                </div>
+                            <?php endif;?>
+                            <?php if(isset($this->imovel['AreaTotal']) && !empty($this->imovel['AreaTotal'])):?>
+                                <div class="col-xs-12 col-md-6">
+                                    Área Total: <?php echo $this->imovel['AreaTotal']?>
+                                </div>
+                            <?php endif;?>
+                            <?php if(isset($this->imovel['AreaTerreno']) && !empty($this->imovel['AreaTerreno'])):?>
+                                <div class="col-xs-12 col-md-6">
+                                    Área do Terreno: <?php echo $this->imovel['AreaTerreno']?>
+                                </div>
+                            <?php endif;?>
+                            <?php foreach($this->imovel['Caracteristicas'] as $characteristica => $value):?>
+                                <?php if(strtolower($value) == 'sim'):?>
+                                    <div class="col-xs-12 col-md-6">
+                                        <?php echo $characteristica?>
+                                    </div>
+                                <?php elseif(is_numeric($value)):?>
+                                    <div class="col-xs-12 col-md-6">
+                                        <?php echo $value . ' ' .$characteristica?>
+                                    </div>
+                                <?php endif;?>
+                            <?php endforeach;?>
+                        </div>
+                    </div>
+                    <?php if ($this->imovel['Categoria'] != 'Terreno') : ?>
+                        <div class="title-view">
+                            <h3>Infra-estrutura do Condomínio</h3>
+                        </div>
+                        <div class="view-imovel-descricao">
+                            <div class="row">
+                                <?php foreach($this->imovel['InfraEstrutura'] as $characteristica => $value):?>
+                                    <?php if(strtolower($value) == 'sim'):?>
+                                        <div class="col-xs-12 col-md-6">
+                                            <?php echo $characteristica?>
+                                        </div>
+                                    <?php elseif(is_numeric($value)):?>
+                                        <div class="col-xs-12 col-md-6">
+                                            <?php echo $characteristica . ': ' . $value?>
+                                        </div>
+                                    <?php endif;?>
+                                <?php endforeach;?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                    <div class="title-view">
+                        <h3>Localização</h3>
+                    </div>
+                    <div class="map map-view" id="mapa-imovel">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-lg-4">
+                <div class="form-contato">
+                    <div class="title-view">
+                        <h3>SOLICITAR CONTATO:</h3>
+                    </div>
+                    <form id="contato-imovel" action="<?php echo $this->serverUrl() . BASEDIR; ?>/fale-conosco" method="post">
+                        <div class="form-contato">
+                            <div class="row">
+                                <div class="col-xs-12 form-group">
+                                    <label for="nome">Nome <span class="red">*</span></label>
+                                    <?php echo $this->form->nome?>
+                                </div>
+                                <div class="col-xs-12 form-group">
+                                    <label for="email">E-mail <span class="red">*</span></label>
+                                    <?php echo $this->form->email?>
+                                </div>
+                                <div class="col-xs-12 form-group">
+                                    <label for="ddd">Telefone <span class="red">*</span></label>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <?php echo $this->form->fone?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 form-group">
+                                    <label for="mensagem">Mensagem <span class="red">*</span><input id="clear-text" class="clear-text" type="button" value="x"/></label>
+                                    <?php echo $this->form->mensagem?>
+                                </div>
+                                <div class="col-xs-12 form-group text-right">
+                                    <input type="hidden" name="imovel" value="<?php echo $this->imovel['Codigo']; ?>"/>
+                                    <input type="submit" value="Enviar" class="btn">
+                                </div>
+                                <input type="hidden" name="subject" value="interesse"/>
+                                <div class="col-xs-12">
+                                    <div class="contato-resposta" ></div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4 col-lg-12 form-group">
+                        <a href="#faca-oferta" class="btn btn-block fancybox">Faça sua oferta</a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-lg-12 form-group">
+                        <a id="add-fav" href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/add-fav?codigo=<?php echo $this->imovel['Codigo']; ?>" class="btn btn-block">
+                            <?php if ($this->fav) : ?>
+                                Este imóvel é um favorito!
+                            <?php else : ?>
+                                Anexar aos favoritos
+                            <?php endif; ?>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-lg-12 form-group">
+                        <a href="#ligamos-voce" class="btn btn-block fancybox">Ligamos para você</a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-lg-12 form-group">
+                        <a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/listagem?e=favoritos" class="btn btn-block">Ver meus favoritos</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <?php if (count($this->semelhantes) > 0) : ?>
+                        <?php echo $this->partial('imoveis/semelhantes.phtml', array('semelhantes' => $this->semelhantes, 'filter_semelhantes' => $this->filter_semelhantes)); ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+
+<?php  $this->form->mensagem->setValue('');?>
+
+<div id="faca-oferta" class="modal fade" role="dialog" style="display: none;">
+    <div class="modal-dialog">
+        <div class="form-contato">
+            <div class="title-view">
+                <h3>Envie sua Oferta:</h3>
+            </div>
+            <form id="contato-imovel" action="<?php echo $this->serverUrl() . BASEDIR; ?>/fale-conosco" method="post">
+                <div class="form-contato">
+                    <div class="row">
+                        <div class="col-xs-12 form-group">
+                            <label for="nome">Nome <span class="red">*</span></label>
+                            <?php echo $this->form->nome?>
+                        </div>
+                        <div class="col-xs-12 col-md-6 form-group">
+                            <label for="email">E-mail <span class="red">*</span></label>
+                            <?php echo $this->form->email?>
+                        </div>
+                        <div class="col-xs-12 col-md-6 form-group">
+                            <label for="ddd">Telefone <span class="red">*</span></label>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <?php echo $this->form->fone?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 form-group">
+                            <label for="email">Mensagem <span class="red">*</span></label>
+                            <?php echo $this->form->mensagem?>
+                        </div>
+                        <input type="hidden" name="subject" value="oferta"/>
+                        <div class="col-xs-12 form-group text-right">
+                            <input type="hidden" name="imovel" value="<?php echo $this->imovel['Codigo']; ?>"/>
+                            <input type="submit" value="Enviar" class="btn">
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="contato-resposta"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="ligamos-voce" class="modal fade" role="dialog" style="display: none;">
+    <div class="modal-dialog">
+        <div class="form-contato">
+            <div class="title-view">
+                <h3>Deixe seu contato e ligamos para você:</h3>
+            </div>
+            <form id="contato-imovel" action="<?php echo $this->serverUrl() . BASEDIR; ?>/fale-conosco" method="post">
+                <div class="form-contato">
+                    <div class="row">
+                        <div class="col-xs-12 form-group">
+                            <label for="nome">Nome <span class="red">*</span></label>
+                            <?php echo $this->form->nome?>
+                        </div>
+                        <div class="col-xs-12 col-md-6 form-group">
+                            <label for="email">E-mail <span class="red">*</span></label>
+                            <?php echo $this->form->email?>
+                        </div>
+                        <div class="col-xs-12 col-md-6 form-group">
+                            <label for="ddd">Telefone <span class="red">*</span></label>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <?php echo $this->form->fone?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 form-group">
+                            <label for="email">Mensagem <span class="red">*</span></label>
+                            <?php echo $this->form->mensagem?>
+                        </div>
+                        <input type="hidden" name="subject" value="oferta"/>
+                        <div class="col-xs-12 form-group text-right">
+                            <input type="hidden" name="imovel" value="<?php echo $this->imovel['Codigo']; ?>"/>
+                            <input type="submit" value="Enviar" class="btn">
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="contato-resposta"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    GMaps.mapLatitude  = '<?php echo $this->imovel['Latitude'];  ?>';
+    GMaps.mapLongitude = '<?php echo $this->imovel['Longitude']; ?>';
+</script>

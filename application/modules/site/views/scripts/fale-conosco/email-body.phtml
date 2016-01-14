@@ -1,0 +1,11 @@
+<h4>Contato enviado pelo site:</h4>
+<ul>
+    <li><strong>Nome: </strong><?php echo $this->data['nome']?></li>
+    <li><strong>Telefone: </strong><?php echo $this->data['fone']?></li>
+    <li><strong>E-mail: </strong><?php echo $this->data['email']?></li>
+    <?php if (isset($this->data['imovel'])) : ?>
+        <li><strong>Interesse no Imóvel: </strong><?php echo $this->data['imovel']?></li>
+    <?php endif;?>
+</ul>
+<p>Mensagem: </p>
+<?php echo $this->data['mensagem']?>

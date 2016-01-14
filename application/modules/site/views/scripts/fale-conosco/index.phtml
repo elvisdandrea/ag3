@@ -1,0 +1,7 @@
+<div class="contato-imovel">
+    <?php if(isset($this->success) && $this->success === TRUE):?>
+        <div class="alert alert-success">Mensagem enviada com sucesso</div>
+    <?php endif;?>
+    <?php echo $this->render('/fale-conosco/contato-form.phtml')?>
+</div>
+

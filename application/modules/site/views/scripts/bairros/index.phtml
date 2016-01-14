@@ -1,0 +1,55 @@
+<div class="container">
+    <!--PESQUISA-->
+    <?php echo $this->partial('index/busca_form.phtml', array(
+        'listas' => $this->listas,
+        'innerDivClass' => 'pesquisa-home',
+        'buttonText' => 'Buscar Imóveis',
+    )); ?>
+    <!--/PESQUISA-->
+    <section class="view-bairros">
+        <div class="row">
+
+            <div class="title-section">
+                <h4 class="title-section-text small"><?php echo $this->bairro['title']; ?> - Zona Sul de Porto Alegre</h4>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-lg-12 center">
+                <?php echo nl2br($this->bairro['description']); ?>
+            </div>
+            <div class="text-center">
+                <a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/listagem?bairros[]=<?php echo $this->bairro['title']; ?>" class="btn">Imóveis em <?php echo $this->bairro['title']; ?></a>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="descricao-bairro">
+
+                    <div class="referencia-bairro">
+                        <h4>Pontos de Referência:</h4>
+                        <ul>
+                            <?php foreach ($this->refs as $ref) : ?>
+                                <li><i class="icon-arrow-right"></i><?php echo $ref; ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+
+                    <div class="fotos-bairro">
+                        <h4>Fotos do bairro:</h4>
+                        <?php foreach ($this->images as $image) : ?>
+                        <a href="<?php echo $image; ?>" class="fancybox" rel="galeria-imovel">
+                            <img height="140px" class="img-responsive" src="<?php echo $image; ?>" alt="<?php echo $this->bairro['title']; ?> - Zona Sul - Porto Alegre">
+                        </a>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+                 <div class="title-section">
+                    <h4 class="title-section-text small">Confira o mapa e localize-se</h4>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-lg-12 center">
+                    <div class="google-maps">
+                        <iframe src="<?php echo $this->bairro['map_frame'];?>" width="900" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>

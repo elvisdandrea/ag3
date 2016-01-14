@@ -1,0 +1,130 @@
+<?php
+$controller = Zend_Controller_Front::getInstance();
+$params = $controller->getRequest()->getQuery();
+$itemsBusca = array('tipo', 'bairro', 'dormitorios', 'vagas', 'banheiros');
+?>
+<form id="busca-refinada" action="<?php echo $this->serverUrl().BASEDIR?>/imoveis/listagem">
+<div id="busca-refinada-form" class="busca-refinada">
+    <div class="title-view">
+        <h3>Ordenar Resultados</h3>
+    </div>
+    <section class="busca">
+        <div class="form-busca">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>Ordenar:</h3>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <select onchange="$('#busca-refinada').submit()" class="form-control" name="order" >
+                                    <option value="">Selecione aqui</option>
+                                    <option value="MenorValor" <?php echo (!isset($params['order']) || $params['order'] != 'MenorValor' ?: 'selected') ?>>Menor Valor</option>
+                                    <option value="MaiorValor" <?php echo (!isset($params['order']) || $params['order'] != 'MaiorValor' ?: 'selected') ?>>Maior Valor</option>
+                                    <option value="PorBairro"  <?php echo (!isset($params['order']) || $params['order'] != 'PorBairro'  ?: 'selected') ?>>Por Bairro</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div id="busca-refinada-form" class="busca-refinada">
+    <div class="title-view">
+        <h3>Refine sua busca</h3>
+    </div>
+    <section class="busca">
+        <div class="form-busca">
+                <?php
+                    $buscas = array('tipo', 'bairros', 'dormitorios', 'banheiros', 'vagas');
+                    foreach ($buscas as $busca) :
+                        if (isset($params[$busca]) && is_array($params[$busca])) : ?>
+                            <?php foreach ($params[$busca] as $item) : ?>
+                                <input type="hidden" name="<?php echo $busca; ?>[]" value="<?php echo $item; ?>"/>
+                            <?php endforeach; ?>
+                        <?php endif;?>
+                    <?php endforeach; ?>
+
+                <?php if (isset($params['lancamento'])) : ?>
+                    <input type="hidden" name="lancamento" value="Sim"/>
+                <?php endif; ?>
+                <div class="row" >
+
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h3>Área:</h3>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-lg-6">
+                                        <div class="form-group">
+                                            <label>De:</label>
+                                            <input name="area_min" class="form-control" value="<?php echo (isset($params['area_min']) && intval($params['area_min']) > 0 ? $params['area_min'] : ''); ?>"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-lg-6">
+                                        <div class="form-group">
+                                            <label>até:</label>
+                                            <input name="area_max" class="form-control" value="<?php echo (isset($params['area_min']) && intval($params['area_min']) > 0 ? $params['area_max'] : ''); ?>"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <h3>Características:</h3>
+                                <span class="checkbox-container">
+                                    <label for="salaofestas"><input <?php if (String::isChecked($params, 'salaofestas', 'on')) : ?>checked<?php endif; ?> type="checkbox" id="salaofestas" name="salaofestas"> Salão de Festas</label>
+                                </span>
+                                <span class="checkbox-container">
+                                    <label for="churrasqueira"><input <?php if (String::isChecked($params, 'churrasqueira', 'on')) : ?>checked<?php endif; ?> type="checkbox" id="churrasqueira" name="churrasqueira"> Churrasqueira</label>
+                                </span>
+                                <span class="checkbox-container">
+                                    <label for="vistapanoramica"><input <?php if (String::isChecked($params, 'vistapanoramica', 'on')) : ?>checked<?php endif; ?> type="checkbox" id="vistapanoramica" name="vistapanoramica"> Vista Guaíba</label>
+                                </span>
+                                <span class="checkbox-container">
+                                    <label for="piscina"><input <?php if (String::isChecked($params, 'piscina', 'on')) : ?>checked<?php endif; ?> type="checkbox" id="piscina" name="piscina"> Piscina</label>
+                                </span>
+                                <span class="checkbox-container">
+                                    <label for="piscinacond"><input <?php if (String::isChecked($params, 'piscinacond', 'on')) : ?>checked<?php endif; ?> type="checkbox" id="piscinacond" name="piscinacond"> Piscina Condominial</label>
+                                </span>
+                                <span class="checkbox-container">
+                                    <label for="imovelnovo"><input <?php if (String::isChecked($params, 'imovelnovo', 'on')) : ?>checked<?php endif; ?> type="checkbox" id="imovelnovo" name="imovelnovo"> Imóvel Novo</label>
+                                </span>
+                                <span class="checkbox-container">
+                                    <label for="sacada"><input <?php if (String::isChecked($params, 'sacada', 'on')) : ?>checked<?php endif; ?> type="checkbox" id="sacada" name="sacada"> Sacada</label>
+                                </span>
+                                <span class="checkbox-container">
+                                    <label for="sotao"><input <?php if (String::isChecked($params, 'sotao', 'on')) : ?>checked<?php endif; ?> type="checkbox" id="sotao" name="sotao"> Sótão</label>
+                                </span>
+                                <span class="checkbox-container">
+                                    <label for="terrea"><input <?php if (String::isChecked($params, 'terrea', 'on')) : ?>checked<?php endif; ?> type="checkbox" id="terrea" name="terrea"> Térrea</label>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <?php foreach ($itemsBusca as $itemBusca) : ?>
+                        <?php if (isset($params[$itemBusca]) && is_array($params[$itemBusca])) :
+                            foreach ($params[$itemBusca] as $item) : ?>
+                                <input type="hidden" name="<?php echo $item; ?>[]" value="<?php echo $item; ?>" />
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+
+                    <?php if (isset($params['valor_min'])) : ?>
+                        <input type="hidden" name="valor_min" value="<?php echo $params['valor_min']; ?>" />
+                    <?php endif; ?>
+                    <?php if (isset($params['valor_max'])) : ?>
+                        <input type="hidden" name="valor_max" value="<?php echo $params['valor_max']; ?>" />
+                    <?php endif; ?>
+
+                    <div class="col-xs-12">
+                        <button type="submit" class="btn btn-block ">
+                            <i class="icon-search"></i> REFINAR
+                        </button>
+                    </div>
+                </div>
+        </div>
+    </section>
+</div>
+</form>

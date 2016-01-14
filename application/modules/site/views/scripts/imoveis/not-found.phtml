@@ -1,0 +1,18 @@
+<div class="container">
+    <!--PESQUISA-->
+    <?php echo $this->partial('index/busca_form.phtml', array(
+        'listas' => $this->listas,
+        'innerDivClass' => 'pesquisa-home',
+        'buttonText' => 'Buscar Imóveis',
+    )); ?>
+    <!--/PESQUISA-->
+    <section class="view-imovel">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="text-center">
+                    <h2>Este imóvel não foi encontrado</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

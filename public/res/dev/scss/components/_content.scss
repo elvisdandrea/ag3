@@ -1,0 +1,338 @@
+
+//
+// Slider Home
+//
+
+.slider-home {
+  height: 210px;
+  margin-bottom: 25px;
+  position: relative;
+
+  @media (min-width: $screen-sm-min) {
+    height: 350px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    height: 420px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    height: 480px;
+  }
+}
+
+.slider-bg {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+//
+// Títulos
+//
+
+.tit-section {
+  margin: 60px 0;
+  position: relative;
+
+  h1 {
+    background-color: #fff;
+    color: $blue;
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: normal;
+    margin: 0;
+    padding: 0 10px;
+    position: relative;
+    z-index: 10;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      height: 1px;
+      background-color: $green;
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  .bg-gray & {
+    h1 {
+      background-color: #f5f5f5;
+    }
+  }
+}
+
+
+//
+// Sub-titulos
+//
+
+.subtit-section {
+  border-bottom: 1px solid $green;
+  margin: 50px 0 25px;
+  padding-bottom: 10px;
+
+  h2 {
+    color: $blue;
+    margin: 0;
+    font-weight: normal;
+  }
+}
+
+
+//
+// View do imóvel
+//
+
+.view-imovel {
+  color: #777;
+}
+
+
+//
+// Nome do imóvel
+//
+
+.name-ap {
+  color: #00ABD2;
+  font-weight: normal;
+  font-size: 2rem;
+  margin-bottom: 35px;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 2.4rem;
+    text-transform: uppercase;
+  }
+}
+
+
+//
+// Galeria de imagens
+//
+
+// Imagem grande
+
+#img-grande {
+  height: 300px;
+
+  li > div {
+    display: table;
+    position: relative;
+    @include square(100%);
+
+    a {
+      display: table-cell;
+      vertical-align: middle;
+
+      &:hover {
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .slides,
+  li {
+    height: 100%;
+  }
+
+  @media (min-width: $screen-md-min) {
+    height: 350px;
+  }
+
+  span {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: rgba(0,0, 0, .5);
+
+    i {
+      color: #fff;
+      font-size: 6.4rem;
+      top: 50%;
+      position: absolute;
+      margin-top: -32px;
+      margin-left: -32px;
+    }
+  }
+}
+
+// Thumbs
+
+#thumbs {
+  max-width: 330px;
+  margin-left: auto;
+  margin-right: auto;
+
+  img {
+    height: 115px;
+    cursor: pointer;
+  }
+}
+
+
+//
+// Informações sobre o imóvel
+//
+
+.info-imovel {
+  max-width: 330px;
+  margin: 0 auto;
+
+  .bg-green {
+    border-radius: 7px;
+    padding: 10px;
+  }
+
+  .list-imoveis-price {
+    padding: 0;
+    text-align: right;
+  }
+
+  .txt-price {
+    display: inline-block;
+    font-size: 2.8rem;
+  }
+}
+
+.bg-green {
+  background-color: $green;
+  color: $blue;
+}
+
+.subtit-contato {
+  @media (min-width: $screen-md-min) {
+    margin-top: 0;
+  }
+}
+
+
+//
+// Botões de ação no imóvel
+//
+
+.actions-imovel {
+  margin-top: 20px;
+
+  a {
+    border: 1px solid transparent;
+    border-radius: 100%;
+    color: $blue;
+    display: inline-block;
+    font-size: 3rem;
+    line-height: 1;
+    height: 39px;
+    padding: 4px 4px;
+    margin: 0 2px;
+    text-decoration: none;
+    width: 39px;
+    text-align: center;
+    position: relative;
+
+    &:hover {
+      border-color: #b7dca0;
+
+      span {
+        display: block;
+      }
+    }
+  }
+
+  span {
+    background-color: #eee;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px #eee;
+    color: #777;
+    display: none;
+    font-size: 1.6rem;
+    margin-top: 8px;
+    position: absolute;
+    top: 100%;
+    padding: 10px 0;
+    width: 170px;
+    text-align: center;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 5px 8px 5px;
+      border-color: transparent transparent #eeeeee transparent;
+      position: absolute;
+      top: -8px;
+      left: 8px;
+    }
+  }
+}
+
+
+//
+// Características
+//
+
+.caracteristicas {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+
+  li {
+    line-height: 2;
+  }
+  
+  span {
+    color: $blue;
+  }
+}
+
+
+//
+// Mapa
+//
+
+.map {
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 56.2%;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (min-width: $screen-md-min) {
+    &:before {
+      padding-top: 35%;
+    }
+  }
+}
+
+
+//
+// Conteudo
+//
+
+.view-conteudo {
+  color: #777;
+}

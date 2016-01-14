@@ -1,0 +1,201 @@
+
+//
+// Listagem de imóveis
+//
+
+.list-imoveis {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.list-imoveis-item {
+  margin-bottom: 20px;
+}
+
+
+// Link
+
+.list-imoveis-link {
+  background-color: $green;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  color: $blue;
+  display: block;
+  padding: 7px;
+
+  &:hover {
+    border-color: #12b1d6;
+    text-decoration: none;
+  }
+
+  -webkit-transition: 150ms;
+  -moz-transition: 150ms;
+  transition: 150ms;
+}
+
+
+// Imagem
+
+.list-imoveis-img {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 155px;
+  width: 100%;
+}
+
+// Informações
+
+.list-imoveis-data {
+  font-family: Arial, sans-serif;
+  font-size: 1.3rem;
+  padding: 7px;
+
+  i {
+    font-size: 2.2rem;
+    margin-right: 5px;
+    vertical-align: sub;
+  }
+
+  span {
+    line-height: 2.5;
+  }
+}
+
+// Preço
+
+.list-imoveis-price {
+  position: relative;
+  padding-right: 33px;
+}
+
+.txt-price {
+  background-color: #fff;
+  color: #12b1d6;
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 2.2rem;
+  font-weight: bold;
+  line-height: 1;
+  padding: 6px 9px;
+}
+
+.plus {
+  background: rgb(17,37,83);
+  background: -moz-linear-gradient(top,  rgba(17,37,83,1) 0%, rgba(49,79,149,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(17,37,83,1) 0%,rgba(49,79,149,1) 100%);
+  background: linear-gradient(to bottom,  rgba(17,37,83,1) 0%,rgba(49,79,149,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#112553', endColorstr='#314f95',GradientType=0 );
+  border-radius: 3px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  line-height: 1.2;
+  right: 0;
+  position: absolute;
+  top: 4px;
+  text-align: center;
+
+  @include square(25px);
+}
+
+
+//
+// Imóveis semelhantes
+//
+
+.list-semelhantes {
+  padding: 0;
+
+  .list-imoveis-img {
+    border-radius: 9px;
+    text-align: center;
+    font-size: 5rem;
+    height: 174px;
+    overflow: hidden;
+
+    span {
+      background-color: rgba(0, 0, 0, .5);
+      display: block;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+    }
+
+    i {
+      color: #fff;
+      display: inline-block;
+      margin-top: 62px;
+    }
+  }
+}
+
+.semelhantes-item {
+  margin-bottom: 20px;
+}
+
+.semelhantes-link {
+  background-color: $blue;
+  border-radius: 9px;
+  color: #fff;
+  display: block;
+  overflow: hidden;
+  
+  p {
+    margin: 0;
+    font-size: 1.6rem;;
+  }
+
+  h3 {
+    margin: 8px 0;
+    font-weight: normal;
+    font-size: 2.4rem;
+  }
+
+  .list-imoveis-data {
+    font-family: $font-family-base;
+    padding: 10px;
+  }
+
+  &:hover {
+    background-color: $green;
+    color: $blue;
+    text-decoration: none;
+
+    .list-imoveis-img span {
+      opacity: 1;
+    }
+  }
+}
+
+
+//
+// Parceiros
+//
+
+.list-parceiros {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 0;
+
+  li {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+
+  a {
+    background-color: #eee;
+    border-radius: 10px;
+    display: block;
+    height: 140px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  img {
+    display: inline-block;
+    max-height: 100%;
+    @include vertical-align();
+  }
+}

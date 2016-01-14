@@ -1,0 +1,107 @@
+<div class="container">
+    <?php echo $this->partial('index/busca_form.phtml', array(
+        'listas' => $this->listas,
+        'innerDivClass' => 'pesquisa-imoveis',
+        'buttonText' => 'Buscar novamente',
+    )); ?>
+
+    <section class="resultado-busca">
+        <div class="title-section">
+            <h2 class="title-section-text"><?php echo $this->title; ?></h2>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-lg-9">
+                <ul class="list-lancamentos list-resultado-busca">
+                    <?php if (count($this->imoveis) > 0) : foreach ($this->imoveis as $imovel) : ?>
+                        <li class="lancamentos-item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-5 col-md-6">
+                                    <div class="thumb-lancamentos">
+                                        <a href="<?php echo $this->serverUrl().BASEDIR?>/imoveis/detalhes/codigo/<?php echo $imovel['Codigo']?>" style="background-image: url(<?php echo $imovel['FotoDestaque']; ?>)"></a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-7 col-md-6">
+                                    <div class="descricao-lancamentos">
+                                        <div class="row">
+                                            <div class="col-xs-6 resultado-busca-info-item resultado-busca-info-codigo">
+                                                Código: <strong><?php echo $imovel['Codigo']; ?></strong>
+                                            </div>
+                                            <div class="col-xs-6 resultado-busca-info-item">
+                                                <i class="icon-pin"></i> <?php echo $imovel['Bairro']; ?>
+                                            </div>
+                                            <div class="col-xs-6 resultado-busca-info-item">
+                                                <i class="icon-house"></i> <?php echo $imovel['Categoria']; ?>
+                                            </div>
+                                            <div <?php if (intval($imovel['Dormitorios']) == 0) : ?>style="visibility: hidden;" <?php endif;?> class="col-xs-6 resultado-busca-info-item">
+                                                <i class="icon-bed"></i> <?php echo $imovel['Dormitorios'] . (intval($imovel['Dormitorios']) > 1 ? ' Dormitórios' : ' Dormitório'); ?>
+                                            </div>
+                                            <div <?php if (intval($imovel['Vagas']) == 0) : ?>style="visibility: hidden;" <?php endif;?> class="col-xs-6 resultado-busca-info-item">
+                                                <i class="icon-car"></i> <?php echo $imovel['Vagas'] . (intval($imovel['Vagas']) > 1 ? ' Vagas' : ' Vaga'); ?>
+                                            </div>
+                                            <?php if ($imovel['Categoria'] == 'Terreno') : ?>
+                                                <div <?php if (intval($imovel['AreaTotal']) == 0) : ?>style="visibility: hidden;" <?php endif;?>class="col-xs-6 resultado-busca-info-item">
+                                                    <i class="icon-menu"></i> <?php echo $imovel['AreaTotal']?> m2
+                                                </div>
+                                            <?php else : ?>
+                                                <div <?php if (intval($imovel['AreaUtil']) == 0) : ?>style="visibility: hidden;" <?php endif;?>class="col-xs-6 resultado-busca-info-item">
+                                                    <i class="icon-menu"></i> <?php echo $imovel['AreaUtil']?> m2
+                                                </div>
+                                            <?php endif; ?>
+                                        </div>
+                                        <span class="price-busca"><?php echo String::asCurrency($imovel['ValorVenda']);?></span>
+                                        <?php if(isset($this->fav)):?>
+                                            <span href="<?php echo $this->serverUrl() . BASEDIR;?>/imoveis/remove-fav?codigo=<?php echo $imovel['Codigo']; ?>" class="btn-simple remove-fav"> Remover dos Favoritos</span>
+                                        <?php endif;?>
+                                    </div>
+                                    <a href="<?php echo $this->serverUrl() . BASEDIR;?>/imoveis/detalhes/codigo/<?php echo $imovel['Codigo']; ?>/<?php echo $imovel['Categoria'] . '/' . $imovel['Bairro'] . (intval($imovel['Dormitorios']) > 0 ? '-' . $imovel['Dormitorios'] : '') ?>/Zona-Sul/Porto-Alegre" class="link-lancamentos"><i class="icon-arrow-right"></i> VER DETALHES</a>
+                                </div>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                    <?php else : ?>
+                        <section class="view-imovel">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="text-center">
+                                        <h2>Nenhum imóvel encontrado com esta pesquisa</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    <?php endif; ?>
+                </ul>
+                <ul class="paginacao">
+
+                    <!-- Previous -->
+                    <?php if(isset($this->pagination->previous)):?>
+                        <?php $this->params['page'] = $this->pagination->previous?>
+                        <li class="paginacao-item with-arrow"><a href="<?php echo $this->serverUrl() . BASEDIR;?>/imoveis/listagem?<?php echo http_build_query($this->params); ?>"><i class="icon-arrow-left"></i></a></li>
+                    <?php else:?>
+                        <li class="paginacao-item with-arrow disabled"><a href="#"><i class="icon-arrow-left"></i></a></li>
+                    <?php endif;?>
+
+                    <!-- Pages List -->
+                    <?php foreach($this->pagination->pagesInRange as $page):?>
+                        <?php if($page == $this->pagination->current):?>
+                            <li class="paginacao-item"><a href="#" class="active"><?php echo $page; ?></a></li>
+                        <?php else:?>
+                            <?php $this->params['page'] = $page?>
+                            <li class="paginacao-item"><a href="<?php echo $this->serverUrl() . BASEDIR;?>/imoveis/listagem?<?php echo http_build_query($this->params); ?>"><?php echo $page?></a></li>
+                        <?php endif;?>
+                    <?php endforeach;?>
+
+                    <!-- Next -->
+                    <?php if(isset($this->pagination->next)):?>
+                        <?php $this->params['page'] = $this->pagination->next?>
+                        <li class="paginacao-item with-arrow"><a href="<?php echo $this->serverUrl() . BASEDIR;?>/imoveis/listagem?<?php echo http_build_query($this->params); ?>"><i class="icon-arrow-right"></i></a></li>
+                    <?php else:?>
+                        <li class="paginacao-item with-arrow disabled"><a href="#"><i class="icon-arrow-right"></i></a></li>
+                    <?php endif;?>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-lg-3">
+                <?php echo $this->partial('index/busca_ref_form.phtml'); ?>
+            </div>
+        </div>
+    </section>
+</div>

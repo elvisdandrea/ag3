@@ -1,0 +1,36 @@
+<div class="container">
+    <section class="lancamentos">
+        <div class="title-section">
+            <h2 class="title-section-text">Bairros da Zona Sul - Porto Alegre</h2>
+        </div>
+        <ul class="list-lancamentos">
+            <?php
+            $current = 0;
+            foreach ($this->bairros as $bairro) : ?>
+                <li class="lancamentos-item lancamento-<?php echo ($current % 2 == 0 ? 'green' : 'yellow'); ?>">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="thumb-lancamentos">
+                                <a href="<?php echo $this->serverUrl() . BASEDIR; ?>/bairros/index/id/<?= $bairro['id'] .'/' . $bairro['title']; ?>/Zona-Sul/Porto-Alegre">
+                                    <img src="<?php
+                                    $images = json_decode($bairro['imgs']);
+                                    echo $images[0]; ?>" alt="<?php echo $bairro['title']; ?> - Zona Sul - Porto Alegre"></a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="descricao-lancamentos">
+                                <p><?php echo $bairro['title']; ?></p>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6">Zona Sul - Porto Alegre</div>
+                                </div>
+                            </div>
+                            <a href="<?php echo $this->serverUrl() . BASEDIR; ?>/bairros/index/id/<?= $bairro['id'] .'/' . $bairro['title']; ?>/Zona-Sul/Porto-Alegre" class="link-lancamentos"><i class="icon-arrow-right"></i> DETALHES DESTE BAIRRO</a>
+                        </div>
+                    </div>
+                </li>
+                <?php
+                $current++;
+            endforeach; ?>
+        </ul>
+    </section>
+</div>
