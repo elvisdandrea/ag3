@@ -1,16 +1,9 @@
 <section class="slider-home">
     <ul class="slides">
-        <li>
-            <div class="slider-bg" style="background-image: url(http://placehold.it/1500x480)"></div>
-        </li>
-        <li>
-            <div class="slider-bg" style="background-image: url(http://placehold.it/1500x480)"></div>
-        </li>
-        <li>
-            <div class="slider-bg" style="background-image: url(http://placehold.it/1500x480)"></div>
-        </li>
-        <li>
-            <div class="slider-bg" style="background-image: url(http://placehold.it/1500x480)"></div>
-        </li>
+        <?php foreach ($this->banners as $banner) :?>
+            <li>
+                <div class="slider-bg" style="background-image: url(<?php echo $banner['image'];?>)"></div>
+            </li>
+        <?php endforeach; ?>
     </ul>
 </section>

@@ -10,32 +10,33 @@ $params = Zend_Controller_Front::getInstance()->getRequest()->getParams();
             <div class="row">
                 <div class="col-xs-6 categoria-item">
                     <i class="icon-house112"></i>
-                    <a href="javascript:;" class="btn btn-block">CASAS/SOBRADOS</a>
+                    <a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/listar?categoria[]=Casa Comercial ou Residencial&categoria[]=Casa em condomínio&categoria[]=Casa Mista&categoria[]=Casa Residencial" class="btn btn-block">CASAS/SOBRADOS</a>
                 </div>
                 <div class="col-xs-6 categoria-item">
                     <i class="icon-modern13"></i>
-                    <a href="javascript:;" class="btn btn-block">COMERCIAIS</a>
+                    <a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/listar?categoria[]=Casa Comercial ou Residencial&categoria[]=Casa Comercial&categoria[]=Loja&categoria[]=Sala Comercial&categoria[]=Prédio Comercial" class="btn btn-block">COMERCIAIS</a>
                 </div>
                 <div class="col-xs-6 categoria-item">
                     <i class="icon-city33"></i>
-                    <a href="javascript:;" class="btn btn-block">APARTAMENTOS</a>
+                    <a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/listar?categoria[]=Apartamento&categoria[]=Apartamento Cobertura&categoria[]=JK&categoria[]=Kitinete&categoria[]=Loft" class="btn btn-block">APARTAMENTOS</a>
                 </div>
                 <div class="col-xs-6 categoria-item">
                     <i class="icon-tree30"></i>
-                    <a href="javascript:;" class="btn btn-block">TERRENOS</a>
+                    <a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/listar?categoria[]=Terreno" class="btn btn-block">TERRENOS</a>
                 </div>
                 <div class="col-xs-6 categoria-item">
                     <i class="icon-rural32"></i>
-                    <a href="javascript:;" class="btn btn-block">SÍTIOS/ÁREAS DE TERRA</a>
+                    <a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/listar?categoria[]=Sítios/Chácaras&categoria[]=Área de Terras" class="btn btn-block">SÍTIOS/ÁREAS DE TERRA</a>
                 </div>
             </div>
         </div>
         <div class="form-busca">
-            <form action="#" class="row">
+            <form action="<?php echo $this->serverUrl() . BASEDIR;?>/imoveis/listagem" class="row">
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <div class="form-group">
-                        <select name="situacao" id="situacao" class="form-control">
-                            <option value="">Situação</option>
+                        <select name="destinacao" id="destinacao" class="form-control">
+                            <option value="VENDA">Venda</option>
+                            <option value="ALUGUEL">Aluguel</option>
                         </select>
                     </div>
                 </div>
@@ -43,6 +44,9 @@ $params = Zend_Controller_Front::getInstance()->getRequest()->getParams();
                     <div class="form-group">
                         <select name="cidade" id="cidade" class="form-control">
                             <option value="">Cidade</option>
+                            <?php foreach ($this->listas['Cidade'] as $cidade) : ?>
+                                <option value="<?php echo $cidade; ?>"><?php echo $cidade; ?></option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                 </div>
@@ -50,6 +54,10 @@ $params = Zend_Controller_Front::getInstance()->getRequest()->getParams();
                     <div class="form-group">
                         <select name="dormitorios" id="dormitorios" class="form-control">
                             <option value="">Dormitórios</option>
+                            <option value="1">1 Dormitório</option>
+                            <option value="2">2 Dormitórios</option>
+                            <option value="3">3 Dormitórios</option>
+                            <option value="4">4 ou mais</option>
                         </select>
                     </div>
                 </div>
@@ -57,6 +65,15 @@ $params = Zend_Controller_Front::getInstance()->getRequest()->getParams();
                     <div class="form-group">
                         <select name="preco-inicial" id="preco-inicial" class="form-control">
                             <option value="">Preço de...</option>
+                            <option value="50000">R$ 50 mil</option>
+                            <option value="100000">R$ 100 mil</option>
+                            <option value="200000">R$ 200 mil</option>
+                            <option value="300000">R$ 300 mil</option>
+                            <option value="400000">R$ 400 mil</option>
+                            <option value="500000">R$ 500 mil</option>
+                            <option value="600000">R$ 600 mil</option>
+                            <option value="800000">R$ 800 mil</option>
+                            <option value="1000000">R$ 1 milhão</option>
                         </select>
                     </div>
                 </div>
@@ -64,6 +81,15 @@ $params = Zend_Controller_Front::getInstance()->getRequest()->getParams();
                     <div class="form-group">
                         <select name="preco-final" id="preco-final" class="form-control">
                             <option value="">Preço até...</option>
+                            <option value="150000">R$ 150 mil</option>
+                            <option value="250000">R$ 250 mil</option>
+                            <option value="350000">R$ 350 mil</option>
+                            <option value="450000">R$ 450 mil</option>
+                            <option value="650000">R$ 650 mil</option>
+                            <option value="850000">R$ 850 mil</option>
+                            <option value="1000000">R$ 1 milhao</option>
+                            <option value="1500000">R$ 1,5 milhão</option>
+                            <option value="30000000">Mais de R$ 1,5 milhão</option>
                         </select>
                     </div>
                 </div>
@@ -71,6 +97,9 @@ $params = Zend_Controller_Front::getInstance()->getRequest()->getParams();
                     <div class="form-group">
                         <select name="tipo" id="tipo" class="form-control">
                             <option value="">Tipo de Imóvel</option>
+                            <?php foreach ($this->listas['Categoria'] as $categoria) : ?>
+                                <option value="<?php echo $categoria; ?>"><?php echo $categoria; ?></option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                 </div>
@@ -78,6 +107,9 @@ $params = Zend_Controller_Front::getInstance()->getRequest()->getParams();
                     <div class="form-group">
                         <select name="bairro" id="bairro" class="form-control">
                             <option value="">Bairro</option>
+                            <?php foreach ($this->listas['Bairro'] as $bairro) : ?>
+                                <option value="<?php echo $bairro; ?>"><?php echo $bairro; ?></option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                 </div>
@@ -85,6 +117,10 @@ $params = Zend_Controller_Front::getInstance()->getRequest()->getParams();
                     <div class="form-group">
                         <select name="garagem" id="garagem" class="form-control">
                             <option value="">Garagem</option>
+                            <option value="1">1 Vaga</option>
+                            <option value="2">2 Vagas</option>
+                            <option value="3">3 Vagas</option>
+                            <option value="4">4 ou mais</option>
                         </select>
                     </div>
                 </div>

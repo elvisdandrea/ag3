@@ -1,100 +1,35 @@
 <section class="container-list-imoveis">
     <div class="subtit-section">
-        <h2>Destaques de Locação</h2>
+        <h2>Destaques de Venda</h2>
     </div>
     <ul class="row list-imoveis">
-        <li class="col-xs-12 col-sm-6 col-md-3 list-imoveis-item">
-            <a href="#" class="list-imoveis-link">
-                <div class="list-imoveis-img" style="background-image: url(http://placehold.it/1500x480)"></div>
-                <div class="list-imoveis-data">
+        <?php foreach ($this->widget2 as $widget2) : ?>
+            <li class="col-xs-12 col-sm-6 col-md-3 list-imoveis-item">
+                <a href="#" class="list-imoveis-link">
+                    <div class="list-imoveis-img" style="background-image: url(<?php echo $widget2['FotoDestaque']; ?>)"></div>
+                    <div class="list-imoveis-data">
                         <span class="disp-block">
-                            <i class="icon-city33"></i> Apartamento
+                            <i class="icon-city33"></i> <?php echo $widget2['Categoria']; ?>
                         </span>
                         <span class="disp-block">
-                            <i class="icon-situation"></i> <strong>Centro - São Leoppoldo</strong>
+                            <i class="icon-situation"></i> <strong><?php echo $widget2['Bairro']; ?> - <?php echo $widget2['Cidade']; ?></strong>
                         </span>
+                        <?php if (intval($widget2['Dormitorios']) > 0) : ?>
+                            <span class="disp-block">
+                                <i class="icon-bed51"></i> <?php echo $widget2['Dormitorios']; ?> dorm.
+                            </span>
+                        <?php endif; ?>
                         <span class="disp-block">
-                            <i class="icon-bed51"></i> 02 dorm.
+                            <i class="icon-car171"></i> <?php echo $widget2['Vagas']; ?> vagas
                         </span>
-                        <span class="disp-block">
-                            <i class="icon-car171"></i> 01 vaga
-                        </span>
-                </div>
-                <div class="list-imoveis-price">
-                    <span class="txt-price">R$ 420.000,00</span>
-                    <span class="plus">+</span>
-                </div>
-            </a>
-        </li>
-        <li class="col-xs-12 col-sm-6 col-md-3 list-imoveis-item">
-            <a href="#" class="list-imoveis-link">
-                <div class="list-imoveis-img" style="background-image: url(http://placehold.it/1500x480)"></div>
-                <div class="list-imoveis-data">
-                        <span class="disp-block">
-                            <i class="icon-city33"></i> Apartamento
-                        </span>
-                        <span class="disp-block">
-                            <i class="icon-situation"></i> <strong>Centro - São Leoppoldo</strong>
-                        </span>
-                        <span class="disp-block">
-                            <i class="icon-bed51"></i> 02 dorm.
-                        </span>
-                        <span class="disp-block">
-                            <i class="icon-car171"></i> 01 vaga
-                        </span>
-                </div>
-                <div class="list-imoveis-price">
-                    <span class="txt-price">R$ 420.000,00</span>
-                    <span class="plus">+</span>
-                </div>
-            </a>
-        </li>
-        <li class="col-xs-12 col-sm-6 col-md-3 list-imoveis-item">
-            <a href="#" class="list-imoveis-link">
-                <div class="list-imoveis-img" style="background-image: url(http://placehold.it/1500x480)"></div>
-                <div class="list-imoveis-data">
-                        <span class="disp-block">
-                            <i class="icon-city33"></i> Apartamento
-                        </span>
-                        <span class="disp-block">
-                            <i class="icon-situation"></i> <strong>Centro - São Leoppoldo</strong>
-                        </span>
-                        <span class="disp-block">
-                            <i class="icon-bed51"></i> 02 dorm.
-                        </span>
-                        <span class="disp-block">
-                            <i class="icon-car171"></i> 01 vaga
-                        </span>
-                </div>
-                <div class="list-imoveis-price">
-                    <span class="txt-price">R$ 420.000,00</span>
-                    <span class="plus">+</span>
-                </div>
-            </a>
-        </li>
-        <li class="col-xs-12 col-sm-6 col-md-3 list-imoveis-item">
-            <a href="#" class="list-imoveis-link">
-                <div class="list-imoveis-img" style="background-image: url(http://placehold.it/1500x480)"></div>
-                <div class="list-imoveis-data">
-                        <span class="disp-block">
-                            <i class="icon-city33"></i> Apartamento
-                        </span>
-                        <span class="disp-block">
-                            <i class="icon-situation"></i> <strong>Centro - São Leoppoldo</strong>
-                        </span>
-                        <span class="disp-block">
-                            <i class="icon-bed51"></i> 02 dorm.
-                        </span>
-                        <span class="disp-block">
-                            <i class="icon-car171"></i> 01 vaga
-                        </span>
-                </div>
-                <div class="list-imoveis-price">
-                    <span class="txt-price">R$ 420.000,00</span>
-                    <span class="plus">+</span>
-                </div>
-            </a>
-        </li>
+                    </div>
+                    <div class="list-imoveis-price">
+                        <span class="txt-price"><?php echo String::asCurrency($widget2['ValorVenda']); ?></span>
+                        <span class="plus">+</span>
+                    </div>
+                </a>
+            </li>
+        <?php endforeach; ?>
     </ul>
     <div class="text-right">
         <a href="#" class="btn btn-ver-mais">VER TODOS</a>

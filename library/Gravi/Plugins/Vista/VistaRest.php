@@ -22,6 +22,7 @@ class VistaRest extends Vista {
         $this->addFieldParam('Bairro');
         $this->addFieldParam('Cidade');
         $this->addFieldParam('Dormitorios');
+        $this->addFieldParam('Destinacao');
         $this->addFieldParam('BanheiroSocialQtd');
 
         $this->execute();
@@ -38,7 +39,7 @@ class VistaRest extends Vista {
         $this->addFieldParam('Categoria');
         $this->addFieldParam('Bairro');
         $this->addFieldParam('Cidade');
-        $this->addFieldParam('BanheiroSocialQtd');
+        $this->addFieldParam('Destinacao');
 
         $this->execute();
 
@@ -56,18 +57,18 @@ class VistaRest extends Vista {
         $this->addFieldParam('Bairro');
         $this->addFieldParam('Cidade');
         $this->addFieldParam('ValorVenda');
-        $this->addFieldParam('ValorOferta');
         $this->addFieldParam('Dormitorios');
         $this->addFieldParam('BanheiroSocialQtd');
         $this->addFieldParam('Empreendimento');
         $this->addFieldParam('Suites');
         $this->addFieldParam('Vagas');
         $this->addFieldParam('AreaTotal');
-        $this->addFieldParam('AreaUtil');
+        $this->addFieldParam('AreaPrivativa');
         $this->addFieldParam('AreaTerreno');
         $this->addFieldParam('DimensoesTerreno');
         $this->addFieldParam('FotoDestaque');
         $this->addFieldParam('FotoDestaquePequena');
+        $this->addFieldParam('Destinacao');
         $this->addFieldParam('Latitude');
         $this->addFieldParam('Longitude');
 
@@ -102,12 +103,13 @@ class VistaRest extends Vista {
         $this->addFieldParam('Suites');
         $this->addFieldParam('Vagas');
         $this->addFieldParam('AreaTotal');
-        $this->addFieldParam('AreaUtil');
+        $this->addFieldParam('AreaPrivativa');
         $this->addFieldParam('AreaTerreno');
         $this->addFieldParam('DimensoesTerreno');
         $this->addFieldParam(array('Foto' => array('Foto', 'FotoPequena', 'Destaque')));
         $this->addFieldParam('Caracteristicas');
         $this->addFieldParam('InfraEstrutura');
+        $this->addFieldParam('Destinacao');
         $this->addFieldParam('Latitude');
         $this->addFieldParam('Longitude');
 

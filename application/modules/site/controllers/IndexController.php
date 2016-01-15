@@ -24,31 +24,24 @@ class IndexController extends Zend_Controller_Action
     public function indexAction() {
 
         $this->view->headScript()->appendFile($this->view->serverUrl().BASEDIR.'/res/js/imoveis.js');
-        
+
         $vista = Services::get('vista_rest');
 
         $this->view->listas = $vista->getListasBusca();
 
         $vista->reset();
 
-        $filtroBanner = array(
-            'SuperDestaqueWeb' => 'Sim'
-        );
-
         $pagination = array(
             'pagina'     => 1,
-            'quantidade' => 5
+            'quantidade' => 4
         );
 
-
-        $vista->buscaImoveis($filtroBanner, $pagination);
         $banners = Gravi_Service_ImochatService::getBanners();
         $this->view->banners = $banners['banners'];
 
-        $vista->reset();
-
         $filtroWidget1 = array(
-            'Lancamento'     => 'Sim',
+            'Destinacao'     => 'ALUGUEL',
+            'EmDestaque'     => 'Sim'
         );
 
         $order = array('DataCadastro' => 'desc');
@@ -56,19 +49,17 @@ class IndexController extends Zend_Controller_Action
         $vista->buscaImoveis($filtroWidget1, $pagination, $order);
 
         $this->view->widget1      = $vista->getResult();
-        $this->view->widget1Title = 'Lançamentos';
 
         $vista->reset();
 
         $filtroWidget2 = array(
-            'OfertaEspecial'     => 'Sim'
+            'Destinacao'     => 'VENDA',
+            'EmDestaque'     => 'Sim'
         );
-
-        $order = array('DataOferta' => 'desc');
 
         $pagination = array(
             'pagina'     => 1,
-            'quantidade' => 6
+            'quantidade' => 4
         );
 
         $vista->buscaImoveis($filtroWidget2, $pagination, $order);
