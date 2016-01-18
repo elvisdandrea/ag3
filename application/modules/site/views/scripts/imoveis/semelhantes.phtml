@@ -1,57 +1,53 @@
-<div class="col-xs-12 col-sm-4 col-lg-12">
-    <div class="title-section">
-        <h4 class="title-section-text small">Imóveis Semelhantes</h4>
-    </div>
-    <div class="centered">
-        <ul class="row">
-            <?php foreach ($this->semelhantes as $semelhantes) :?>
-                <li class="col-xs-9 col-sm-9 oportunidades-item oportunidades-center">
-                    <a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/detalhes?codigo=<?= $semelhantes['Codigo']; ?>">
-                        <div class="thumb-oportunidades">
-                            <img height="130px" src="<?php echo $semelhantes['FotoDestaque']; ?>" alt="<?php echo $semelhantes['Categoria'] . ' - ' . $semelhantes['Bairro'] ?> - Zona Sul - Porto Alegre">
-                        </div>
-                        <div class="descricao-opotunidades">
-                            <span class="descricao-oportunidades-title"><?php echo $semelhantes['Bairro'];?></span>
-                            <div class="descricao-opotunidades-content">
-                                <p>Código: <?php echo $semelhantes['Codigo'];?></p>
-                                <!--                            <p><i class="icon-house"></i><strong> <?php echo $semelhantes['Categoria'];?></strong></p>
-                            <p <?php if ($semelhantes['Dormitorios'] == '') :?>style="visibility: hidden"<?php endif;?>>
-                                <i class="icon-bed"></i>
-                                <?php echo $semelhantes['Dormitorios'];?> dormitórios
-                            </p>
-                            <p <?php if ($semelhantes['Vagas'] == '') :?>style="visibility: hidden"<?php endif;?>>
-                                <i class="icon-car"></i>
-                                <?php echo $semelhantes['Vagas'];?> vagas
-                            </p>
-                            <p <?php if ($semelhantes['AreaTotal'] == '') :?>style="visibility: hidden"<?php endif;?>><i class="icon-map"></i> <?php echo $semelhantes['AreaTotal'];?> m2</p>
-                            --><p style="font-size: 18px;">
-                                    <?php if (intval($semelhantes['ValorOferta']) > 0) : ?>Por:<?php endif;?>
-                                    <?php echo (intval($semelhantes['ValorOferta']) > 0 ? String::asCurrency($semelhantes['ValorOferta']) : '' ) ;?>
-                                </p>
-                                <div class="ofertas">
-                                                <span class="oferta-especial" style="font-size: 17px">
-                                                    <strong>
-                                                        <?php if (intval($semelhantes['ValorOferta']) > 0) :
-
-                                                            $save = intval($semelhantes['ValorVenda']) - intval($semelhantes['ValorOferta']);
-                                                            echo 'ECONOMIZE ' . ($save / 1000) . ' MIL';
-                                                            ?>
-
-                                                        <?php else : ?>
-                                                            <?php echo String::asCurrency($semelhantes['ValorVenda']);?>
-                                                        <?php endif; ?>
-                                                    </strong>
-                                                </span>
-                                    <span class="oferta-mais-detalhes"><strong>+</strong> DETALHES</span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-        <div class="text-center lower-bar">
-            <a class="btn" href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/listagem?<?php echo http_build_query($this->filter_semelhantes); ?>">Ver Todos</a>
-        </div>
-    </div>
+<div class="subtit-section">
+    <h2>Imóveis semelhantes</h2>
 </div>
+<ul class="list-semelhantes row">
+    <li class="col-xs-12 col-sm-6 col-md-3 semelhantes-item">
+        <a href="" class="semelhantes-link">
+            <div class="list-imoveis-img" style="background-image: url(http://placehold.it/1500x480)"><span><i class="icon-add182"></i></span></div>
+            <div class="list-imoveis-data">
+                <p>
+                    Apartamento <br>
+                    Padre Reus São Leopoldo
+                </p>
+                <h3>R$ 1.200,00</h3>
+            </div>
+        </a>
+    </li>
+    <li class="col-xs-12 col-sm-6 col-md-3 semelhantes-item">
+        <a href="" class="semelhantes-link">
+            <div class="list-imoveis-img" style="background-image: url(http://placehold.it/1500x480)"><span><i class="icon-add182"></i></span></div>
+            <div class="list-imoveis-data">
+                <p>
+                    Apartamento <br>
+                    Padre Reus São Leopoldo
+                </p>
+                <h3>R$ 1.200,00</h3>
+            </div>
+        </a>
+    </li>
+    <li class="col-xs-12 col-sm-6 col-md-3 semelhantes-item">
+        <a href="" class="semelhantes-link">
+            <div class="list-imoveis-img" style="background-image: url(http://placehold.it/1500x480)"><span><i class="icon-add182"></i></span></div>
+            <div class="list-imoveis-data">
+                <p>
+                    Apartamento <br>
+                    Padre Reus São Leopoldo
+                </p>
+                <h3>R$ 1.200,00</h3>
+            </div>
+        </a>
+    </li>
+    <li class="col-xs-12 col-sm-6 col-md-3 semelhantes-item">
+        <a href="" class="semelhantes-link">
+            <div class="list-imoveis-img" style="background-image: url(http://placehold.it/1500x480)"><span><i class="icon-add182"></i></span></div>
+            <div class="list-imoveis-data">
+                <p>
+                    Apartamento <br>
+                    Padre Reus São Leopoldo
+                </p>
+                <h3>R$ 1.200,00</h3>
+            </div>
+        </a>
+    </li>
+</ul>

@@ -2,7 +2,18 @@
     <ul class="slides">
         <?php foreach ($this->banners as $banner) :?>
             <li>
-                <div class="slider-bg" style="background-image: url(<?php echo $banner['image'];?>)"></div>
+                <div class="slider-bg" style="background-image: url(<?php echo $banner['image'];?>)">
+                    <h2 class="title-slider"><strong><?php echo $banner['title'];?></strong></h2>
+                    <ul class="list-slider">
+                        <?php
+                        $description = explode(PHP_EOL, $banner['description']);
+                        foreach ($description as $line) : ?>
+                            <li><i class="icon-check"></i> <?php echo $line;?></li>
+                        <?php endforeach;
+                        ?>
+                    </ul>
+                    <a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/detalhes/codigo/<?php echo $banner['property_id'];?>/Zona Sul/Porto Alegre" class="btn">Saiba Mais</a>
+                </div>
             </li>
         <?php endforeach; ?>
     </ul>

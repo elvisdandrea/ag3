@@ -95,7 +95,6 @@ class VistaRest extends Vista {
         $this->addFieldParam('Bairro');
         $this->addFieldParam('Cidade');
         $this->addFieldParam('ValorVenda');
-        $this->addFieldParam('ValorOferta');
         $this->addFieldParam('Dormitorios');
         $this->addFieldParam('Empreendimento');
         $this->addFieldParam('Descricao');

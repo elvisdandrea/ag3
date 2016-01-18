@@ -5,7 +5,7 @@
     <ul class="row list-imoveis">
         <?php foreach ($this->widget1 as $widget1) : ?>
             <li class="col-xs-12 col-sm-6 col-md-3 list-imoveis-item">
-                <a href="#" class="list-imoveis-link">
+                <a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/detalhes/codigo/<?= $widget1['Codigo']; ?>/<?php echo $widget1['Categoria'] . '/' . $widget1['Bairro'] . '/' . $widget1['Cidade'] . '/' . (intval($widget1['Dormitorios']) > 0 ? '-' . $widget1['Dormitorios'] : '') ?>" class="list-imoveis-link">
                     <div class="list-imoveis-img" style="background-image: url(<?php echo $widget1['FotoDestaque']; ?>)"></div>
                     <div class="list-imoveis-data">
                         <span class="disp-block">
@@ -32,6 +32,6 @@
         <?php endforeach; ?>
     </ul>
     <div class="text-right">
-        <a href="#" class="btn btn-ver-mais">VER TODOS</a>
+        <a href="<?php echo $this->serverUrl() . BASEDIR;?>/imoveis/listagem?destaque=Sim&finalidade=venda" class="btn btn-ver-mais">VER TODOS</a>
     </div>
 </section>

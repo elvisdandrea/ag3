@@ -82,7 +82,19 @@ $('#img-grande').flexslider({
     animationLoop: false,
     slideshow: false,
     sync: "#thumbs",
-    directionNav: false
+    directionNav: false,
+    start: function () {
+        setTimeout(function(){
+            var height = $('#img-grande').find('.lightbox-galeria > img').first().height();
+            $('#img-grande').height(height + 'px');
+        }, 200);
+    },
+    after: function() {
+        var height = $('.flex-active-slide').find('.lightbox-galeria > img').height();
+        $('#img-grande').animate({
+            height: height + 'px'
+        });
+    }
 });
 
 

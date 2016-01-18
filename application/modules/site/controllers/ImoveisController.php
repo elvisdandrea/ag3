@@ -12,9 +12,10 @@ class ImoveisController extends Zend_Controller_Action{
         if($this->_request->isXmlHttpRequest()) {
             $this->_helper->layout()->disableLayout();
             $this->_helper->viewRenderer->setRender('lista-imoveis');
-        }
-        else
+        } else {
             $this->view->headScript()->appendFile($this->view->serverUrl().BASEDIR.'/res/js/imoveis.js');
+            $this->view->headScript()->appendFile($this->view->serverUrl().BASEDIR.'/res/js/listagem.js');
+        }
 
         $this->view->bodyClass = 'pg-interna';
 
@@ -40,7 +41,7 @@ class ImoveisController extends Zend_Controller_Action{
         empty($params['vagas'])      || $filtros['Vagas']     = $params['vagas'];
         empty($params['banheiros'])  || $filtros['BanheiroSocialQtd']    = $params['banheiros'];
         empty($params['lancamento']) || $filtros['Lancamento'] = $params['lancamento'];
-        empty($params['oportunidades']) || $filtros['OfertaEspecial'] = $params['oportunidades'];
+        empty($params['destaque'])   || $filtros['EmDestaque'] = $params['destaque'];
 
         empty($params['dormitorios']) || $filtros['Dormitorios'] = $params['dormitorios'];
 
@@ -112,7 +113,7 @@ class ImoveisController extends Zend_Controller_Action{
 
         $page = empty($params['page']) ? 1 : $params['page'];
 
-        $vista->setPaginationParam($page, 9);
+        $vista->setPaginationParam($page, 12);
         $vista->buscaImoveis($filtros);
 
         $this->view->params  = $params;

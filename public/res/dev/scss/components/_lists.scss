@@ -1,11 +1,11 @@
 
 //
-// Listagem de imóveis
+// Listagem de imï¿½veis
 //
 
 .list-imoveis {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 20px;
   padding: 0;
 }
 
@@ -17,12 +17,14 @@
 // Link
 
 .list-imoveis-link {
-  background-color: $green;
+  background-color: #B7DCA0;
   border: 2px solid transparent;
   border-radius: 6px;
-  color: $blue;
+  color: #152D65;
   display: block;
   padding: 7px;
+  transition: all 150ms ease 0s;
+  min-height: 465px;
 
   &:hover {
     border-color: #12b1d6;
@@ -45,7 +47,7 @@
   width: 100%;
 }
 
-// Informações
+// Informaï¿½ï¿½es
 
 .list-imoveis-data {
   font-family: Arial, sans-serif;
@@ -63,22 +65,29 @@
   }
 }
 
-// Preço
+// Preï¿½o
 
 .list-imoveis-price {
-  position: relative;
   padding-right: 33px;
+  bottom: 0;
+  margin-bottom: 0;
+  position: absolute;
+  width: 83%;
 }
 
 .txt-price {
-  background-color: #fff;
-  color: #12b1d6;
   display: block;
   font-family: Arial, sans-serif;
   font-size: 2.2rem;
   font-weight: bold;
   line-height: 1;
-  padding: 6px 9px;
+  width: 121%;
+  background-color: rgb(21, 45, 101);
+  padding: 0.6em;
+  color: #FFF;
+  border-radius: 4px;
+  margin-bottom: -20px;
+  box-shadow: 1px 1px 1px 1px #999;
 }
 
 .plus {
@@ -102,7 +111,7 @@
 
 
 //
-// Imóveis semelhantes
+// Imï¿½veis semelhantes
 //
 
 .list-semelhantes {

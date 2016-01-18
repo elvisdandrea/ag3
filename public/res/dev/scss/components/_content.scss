@@ -21,6 +21,12 @@
   }
 }
 
+.title-slider {
+  max-width: 1000px;
+  margin: 30px auto;
+  font-size: 3.9rem;
+}
+
 .slider-bg {
   background-repeat: no-repeat;
   background-position: center;
@@ -174,7 +180,7 @@
 // Thumbs
 
 #thumbs {
-  max-width: 330px;
+  max-width: 510px;
   margin-left: auto;
   margin-right: auto;
 
@@ -190,12 +196,13 @@
 //
 
 .info-imovel {
-  max-width: 330px;
+  max-width: 510px;
   margin: 0 auto;
 
   .bg-green {
     border-radius: 7px;
-    padding: 10px;
+    padding: 10px 10px 0px 10px;
+    overflow: visible;
   }
 
   .list-imoveis-price {
@@ -206,6 +213,13 @@
   .txt-price {
     display: inline-block;
     font-size: 2.8rem;
+    width: 109%;
+    background-color: rgb(21, 45, 101);
+    padding: 0.6em;
+    color: #FFF;
+    border-radius: 4px;
+    margin-bottom: -10px;
+    box-shadow: 1px 1px 1px 1px #999;
   }
 }
 
@@ -335,4 +349,10 @@
 
 .view-conteudo {
   color: #777;
+}
+
+.highlight {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 50px;
 }
