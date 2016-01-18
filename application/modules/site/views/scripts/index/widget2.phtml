@@ -5,7 +5,7 @@
     <ul class="row list-imoveis">
         <?php foreach ($this->widget2 as $widget2) : ?>
             <li class="col-xs-12 col-sm-6 col-md-3 list-imoveis-item">
-                <a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/detalhes/codigo/<?= $widget1['Codigo']; ?>/<?php echo $widget1['Categoria'] . '/' . $widget1['Bairro'] . '/' . $widget1['Cidade'] . '/' . (intval($widget1['Dormitorios']) > 0 ? '-' . $widget1['Dormitorios'] : '') ?>" class="list-imoveis-link">
+                <a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/detalhes/codigo/<?= $widget2['Codigo']; ?>/<?php echo $widget2['Categoria'] . '/' . $widget2['Bairro'] . '/' . $widget2['Cidade'] . '/' . (intval($widget2['Dormitorios']) > 0 ? '-' . $widget2['Dormitorios'] : '') ?>" class="list-imoveis-link">
                     <div class="list-imoveis-img" style="background-image: url(<?php echo $widget2['FotoDestaque']; ?>)"></div>
                     <div class="list-imoveis-data">
                         <span class="disp-block">
