@@ -134,6 +134,7 @@ class ImoveisController extends Zend_Controller_Action{
 
         $this->view->bodyClass = 'pg-interna';
 
+        $this->view->headScript()->appendFile($this->view->serverUrl().BASEDIR.'/res/js/imoveis.js');
         $this->view->headScript()->appendFile($this->view->serverUrl().BASEDIR.'/res/js/detalhes.js');
 
         $imoCodigo = $this->_request->getParam('codigo');

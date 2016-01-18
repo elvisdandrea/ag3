@@ -57,6 +57,9 @@ class VistaRest extends Vista {
         $this->addFieldParam('Bairro');
         $this->addFieldParam('Cidade');
         $this->addFieldParam('ValorVenda');
+        $this->addFieldParam('ValorIptu');
+        $this->addFieldParam('ValorLocacao');
+        $this->addFieldParam('ValorCondominio');
         $this->addFieldParam('Dormitorios');
         $this->addFieldParam('BanheiroSocialQtd');
         $this->addFieldParam('Empreendimento');
@@ -95,6 +98,9 @@ class VistaRest extends Vista {
         $this->addFieldParam('Bairro');
         $this->addFieldParam('Cidade');
         $this->addFieldParam('ValorVenda');
+        $this->addFieldParam('ValorIptu');
+        $this->addFieldParam('ValorLocacao');
+        $this->addFieldParam('ValorCondominio');
         $this->addFieldParam('Dormitorios');
         $this->addFieldParam('Empreendimento');
         $this->addFieldParam('Descricao');

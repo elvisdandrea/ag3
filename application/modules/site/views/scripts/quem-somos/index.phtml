@@ -1,60 +1,11 @@
-<div class="img-institutional">
 
-</div>
 <div class="container">
     <section class="view-institucional">
         <div class="row">
-            <div class="title-view">
-                <h3>CONHEÇA A NOSSA HISTÓRIA:</h3>
-            </div>
             <div class="col-xs-12 col-sm-12 col-lg-12">
-                <p>
-                    Pioneira na Zona Sul de Porto Alegre, a TerraSul Imóveis proporciona a seus clientes os melhores negócios imobiliários desde 1974.
-                </p>
-
-                <p>
-                    Há 40 anos, escolhemos a Zona Sul da Capital pela sua qualidade de vida: Contato com a natureza, conforto, requinte e seu estilo de vida próprio.
-                </p>
-
-                <p>
-                    Assim, a TerraSul tornou-se referência absoluta quando o assunto são imóveis nessa região tão especial da cidade!
-                </p>
-
-                <p>
-                    Nossa equipe de corretores têm experiência e conhecimento da Zona Sul, e está sempre preparada para oferecer o melhor atendimento e ajudar você a encontrar o imóvel que sempre sonhou. Trabalhamos com agilidade e competência, comprometidos com nossos clientes e buscando sempre as melhores oportunidades na compra e venda de imóveis. 
-                </p>
-
-                <p>
-                    Seja você também um cliente da TerraSul Imóveis e descubra como nossa experiência e tradição fazem a diferença para quem deseja morar com qualidade de vida na Zona Sul de Porto Alegre.
-                </p>
-
-                 <div class="title-view">
-                    <h3>CONHEÇA NOSSOS SERVIÇOS:</h3>
-                </div>
-
-                <div>
-                    <p>
-                       A TerraSul Imóveis conta com um banco próprio de mais de 1.500 imóveis cadastrados, de qualidade e devidamente regularizados, localizados na Zona Sul de Porto Alegre e que atendem às diferentes necessidades de nossos clientes. São casas em condomínio, casas individuais, apartamentos, coberturas, terrenos, sítios e imóveis comerciais.
-                    </p>
-
-                    <p>
-                        Em nosso site, você visualiza alguns dos nossos principais imóveis através de um sistema de busca moderno e inovador. Você também pode criar seu perfil personalizado e cadastrar-se no Alerta de Imóveis, e a partir disso receber via e-mail informações sobre novos imóveis disponíveis, automaticamente quando eles entrarem em nosso sistema.
-                    </p>
-
-                   <p>
-                        Em nossa loja contamos com um Sistema de Gestão Imobiliária moderno, onde você poderá visualizar informações e imagens do maior cadastro atualizado de imóveis da Zona Sul, filtrando de acordo com seu perfil e visitando apenas aqueles que mais lhe interessam, sem perda de tempo.
-                    </p> 
-
-                    <p>
-                        Ligue para (51) 3257.7777 ou visite nossa loja na Avenida Cel. Marcos, 2.416, pois só quem melhor conhece a Zona Sul pode oferecer as melhores opções em compra e venda de imóveis.
-                        Venha realizar o negócio dos seus sonhos com a máxima tranquilidade e segurança: venha conhecer a equipe TerraSul!
-                    </p>
-                </div>
-
                 <div class="title-view">
-                    <h3>CONHEÇA NOSSOS COLABORADORES:</h3>
+                    <h3>EQUIPE AG3 IMÓVEIS</h3>
                 </div>
-
                 <div class="row">
                     <div class="col-lg-12">
                         <?php foreach ($this->groups as $group => $users) : ?>
@@ -105,55 +56,6 @@
                         <?php endforeach; ?>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section class="resultado-busca">
-        <div class="title-section">
-            <h2 class="title-section-text">TRABALHE CONOSCO</h2>
-        </div>
-        <div class="row">
-            <div class="col-lg-10 col-centered">
-                <form id="contato-empresa" action="<?php echo $this->serverUrl() . BASEDIR; ?>/fale-conosco" method="post">
-                    <div class="form-contato">
-                        <div class="row">
-                            <div class="col-xs-12 form-group">
-                                <label for="nome">Nome <span class="red">*</span></label>
-                                <?php echo $this->form->nome?>
-                            </div>
-                            <div class="col-xs-12 col-md-6 form-group">
-                                <label for="email">E-mail <span class="red">*</span></label>
-                                <?php echo $this->form->email?>
-                            </div>
-                            <div class="col-xs-12 col-md-6 form-group">
-                                <label for="fone">Telefone <span class="red">*</span></label>
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <?php echo $this->form->fone?>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 form-group">
-                                <label for="email">Mensagem <span class="red">*</span></label>
-                                <?php echo $this->form->mensagem?>
-                            </div>
-                            <hr>
-                            <div class="col-xs-12 form-group">
-                                <label for="email">Anexar Currículo</label>
-                                <input id="curriculo-btn" type="file" />
-                                <input type="hidden" id="curriculo" name="curriculo" value="">
-                                <input type="hidden" id="curriculo-name" name="curriculo-name" value="">
-                            </div>
-                            <input type="hidden" name="subject" value="contato"/>
-                            <div class="col-xs-12 form-group text-right">
-                                <input type="submit" value="Enviar" class="btn">
-                            </div>
-                            <div class="col-xs-12" >
-                                <div class="form-contato contato-resposta"  ></div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
             </div>
         </div>
     </section>

@@ -45,7 +45,7 @@ $params = Zend_Controller_Front::getInstance()->getRequest()->getParams();
                         <select name="cidade" id="cidade" class="form-control">
                             <option value="">Cidade</option>
                             <?php foreach ($this->listas['Cidade'] as $cidade) : ?>
-                                <option value="<?php echo $cidade; ?>"><?php echo $cidade; ?></option>
+                                <option value="<?php echo $cidade; ?>"><?php echo String::camelCase($cidade); ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
@@ -108,7 +108,7 @@ $params = Zend_Controller_Front::getInstance()->getRequest()->getParams();
                         <select name="bairro" id="bairro" class="form-control">
                             <option value="">Bairro</option>
                             <?php foreach ($this->listas['Bairro'] as $bairro) : ?>
-                                <option value="<?php echo $bairro; ?>"><?php echo $bairro; ?></option>
+                                <option value="<?php echo $bairro; ?>"><?php echo String::camelCase($bairro); ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>

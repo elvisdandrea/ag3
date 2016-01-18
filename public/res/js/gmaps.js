@@ -2,13 +2,6 @@ function GMaps(){}
 
 GMaps.prototype = {
     init : function(elementId, lat, lng, zoom) {
-        if ($(window).width() > 400) {
-            lat = lat - 0.0028895;
-            lng = lng - 0.0003895;
-        } else {
-            lat = lat - 0.0014895;
-            lng = lng - 0.0001095;
-        }
         var latlng = new google.maps.LatLng(lat, lng);
         var myOptions = {
             zoom: zoom,

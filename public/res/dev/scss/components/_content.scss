@@ -23,8 +23,22 @@
 
 .title-slider {
   max-width: 1000px;
-  margin: 30px auto;
+  margin: 0px auto;
   font-size: 3.9rem;
+  color: #FFF;
+  text-shadow: 1px 1px 1px #152D65;
+
+  @media (min-width: $screen-lg-min) {
+    font-size: 6.9rem;
+  }
+}
+
+.list-slider {
+  margin-top: 1em;
+  margin-bottom: .7em;
+  font-size: 3.9rem;
+  color: #FFF;
+  text-shadow: 1px 1px 1px #152D65;
 }
 
 .slider-bg {
@@ -201,8 +215,9 @@
 
   .bg-green {
     border-radius: 7px;
-    padding: 10px 10px 0px 10px;
+    padding: 10px 10px 0px;
     overflow: visible;
+    min-height: 400px;
   }
 
   .list-imoveis-price {
@@ -214,12 +229,13 @@
     display: inline-block;
     font-size: 2.8rem;
     width: 109%;
-    background-color: rgb(21, 45, 101);
+    background-color: #152D65;
     padding: 0.6em;
     color: #FFF;
     border-radius: 4px;
-    margin-bottom: -10px;
+    margin-bottom: 45px;
     box-shadow: 1px 1px 1px 1px #999;
+    bottom: 0;
   }
 }
 
@@ -262,6 +278,7 @@
 
       span {
         display: block;
+        z-index: 999;
       }
     }
   }
@@ -355,4 +372,14 @@
   font-size: 22px;
   font-weight: bold;
   line-height: 50px;
+}
+
+.banner-info {
+  position: relative;
+  top: 20%;
+}
+
+.col-centered {
+  float: none !important;
+  margin: 0px auto !important;
 }

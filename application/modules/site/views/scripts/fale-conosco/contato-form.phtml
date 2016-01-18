@@ -5,12 +5,12 @@
         'buttonText' => 'Buscar novamente',
     )); ?>
 
-    <section class="resultado-busca">
-        <div class="title-section">
-            <h2 class="title-section-text">SOLICITAR CONTATO</h2>
+    <section class="view-contato">
+        <div class="subtit-section">
+            <h2 class="">Solicitar contato</h2>
         </div>
         <div class="row">
-            <div class="col-lg-8 col-centered">
+            <div class="col-lg-8">
                 <form id="contato-imovel" action="<?php echo $this->serverUrl() . BASEDIR; ?>/fale-conosco" method="post">
                     <div class="form-contato">
                         <div class="row">
@@ -18,16 +18,32 @@
                                 <label for="nome">Nome <span class="red">*</span></label>
                                 <?php echo $this->form->nome?>
                             </div>
-                            <div class="col-xs-12 col-md-6 form-group">
+                            <div class="col-xs-12 col-md-12 form-group">
                                 <label for="email">E-mail <span class="red">*</span></label>
                                 <?php echo $this->form->email?>
                             </div>
-                            <div class="col-xs-12 col-md-6 form-group">
+                            <div class="col-xs-12 col-md-7 form-group">
+                                <label for="email">Cidade </label>
+                                <?php echo $this->form->cidade?>
+                            </div>
+                            <div class="col-xs-12 col-md-5 form-group">
                                 <label for="ddd">Telefone <span class="red">*</span></label>
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <?php echo $this->form->fone?>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-12">
+                                <div class="form-group">
+                                    <label for="cidade-send">Assunto:*</label>
+                                    <select name="assunto" id="assunto" class="form-control">
+                                        <option value="">Escolha um assunto de seu interesse</option>
+                                        <option value="vanda">Venda</option>
+                                        <option value="aluguel">Aluguel</option>
+                                        <option value="trabalhe-conosco">Trabalhe Conosco</option>
+                                        <option value="outros">Outros</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-xs-12 form-group">
@@ -36,7 +52,6 @@
                             </div>
                             <input type="hidden" name="subject" value="contato"/>
                             <div class="col-xs-12 form-group text-right">
-                                <input type="hidden" name="imovel" value="<?php echo $this->imovel['Codigo']; ?>"/>
                                 <input type="submit" value="Enviar" class="btn">
                             </div>
                         </div>

@@ -3,7 +3,7 @@ $('html, body').animate({
 }, 1000);
 
 if (GMaps.mapLatitude != undefined && GMaps.mapLatitude != '') {
-    GMaps.init('mapa-imovel', GMaps.mapLatitude, GMaps.mapLongitude, 16);
-    GMaps.add_point(GMaps.mapLatitude, GMaps.mapLongitude);
+    GMaps.init('mapa-imovel', GMaps.mapLatitude, GMaps.mapLongitude, 15);
+    GMaps.add_circle(GMaps.mapLatitude, GMaps.mapLongitude);
 }
 

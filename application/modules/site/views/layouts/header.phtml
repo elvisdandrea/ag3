@@ -11,27 +11,27 @@
             </a>
             <a href="#" class="social-item social-twitter" title="Twitter">
                 <i class="icon-logo22"></i>
-                <span>Curta a nossa página no Facebook!</span>
+                <span>Siga-nos no Twitter!</span>
             </a>
             <a href="#" class="social-item social-youtube" title="YouTube">
                 <i class="icon-youtube30"></i>
-                <span>Curta a nossa página no Facebook!</span>
+                <span>Veja nossos imóveis no Youtube!</span>
             </a>
             <a href="#" class="social-item social-instagram" title="Instagram">
                 <i class="icon-instagram19"></i>
-                <span>Curta a nossa página no Facebook!</span>
+                <span>Acompanhe nossas ofertas no Instagram!</span>
             </a>
             <a href="#" class="social-item social-phone" title="Ligamos para você">
                 <i class="icon-phone72"></i>
                 <span>Ligamos para você</span>
             </a>
-            <a href="#" class="social-item social-favorito" title="Adicione seus favoritos">
+            <a href="<?php echo $this->serverUrl() . BASEDIR?>/imoveis/listagem?e=favoritos" class="social-item social-favorito" title="Confira seus favoritos">
                 <i class="icon-star174"></i>
-                <span>Adicione seus favoritos</span>
+                <span>Confira seus favoritos</span>
             </a>
             <a href="#" class="social-item social-whatsapp" title="WhatsApp">
                 <i class="icon-socialnetwork179"></i>
-                <span>Curta a nossa página no Facebook!</span>
+                <span>Contate-nos pelo Whatsapp!</span>
             </a>
         </div>
     </div>
@@ -39,13 +39,13 @@
 <nav class="menu">
     <div class="container">
         <ul>
-            <li class="menu-item menu-active"><a href="#">HOME</a></li>
-            <li class="menu-item"><a href="#">EMPRESA</a></li>
-            <li class="menu-item"><a href="#">VENDA</a></li>
-            <li class="menu-item"><a href="#">LOCAÇÕES</a></li>
+            <li class="menu-item menu-active"><a href="<?php echo $this->serverUrl() . BASEDIR; ?>">HOME</a></li>
+            <li class="menu-item"><a href="<?php echo $this->serverUrl() . BASEDIR; ?>/quem-somos">EMPRESA</a></li>
+            <li class="menu-item"><a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/listagem?finalidade=venda">VENDA</a></li>
+            <li class="menu-item"><a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/listagem?finalidade=aluguel">LOCAÇÕES</a></li>
             <li class="menu-item"><a href="#">PARCEIROS</a></li>
             <li class="menu-item"><a href="#">SERVIÇOS</a></li>
-            <li class="menu-item"><a href="#">CONTATO</a></li>
+            <li class="menu-item"><a href="<?php echo $this->serverUrl() . BASEDIR; ?>/fale-conosco">CONTATO</a></li>
         </ul>
     </div>
 </nav>

@@ -10,7 +10,7 @@
 }
 
 .list-imoveis-item {
-  margin-bottom: 20px;
+  margin-bottom: 60px;
 }
 
 
@@ -92,21 +92,21 @@
 
 .plus {
   background: rgb(17,37,83);
-  background: -moz-linear-gradient(top,  rgba(17,37,83,1) 0%, rgba(49,79,149,1) 100%);
-  background: -webkit-linear-gradient(top,  rgba(17,37,83,1) 0%,rgba(49,79,149,1) 100%);
-  background: linear-gradient(to bottom,  rgba(17,37,83,1) 0%,rgba(49,79,149,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#112553', endColorstr='#314f95',GradientType=0 );
+  background: -moz-linear-gradient(top,  #2F7C3F 0%, #B7DCA0 100%);
+  background: -webkit-linear-gradient(top,  #2F7C3F 0%,#B7DCA0 100%);
+  background: linear-gradient(to bottom,  #2F7C3F 0%, #B7DCA0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2F7C3F', endColorstr='#B7DCA0',GradientType=0 );
   border-radius: 3px;
-  color: #fff;
-  font-family: Arial, sans-serif;
+  color: #FFF;
+  font-family: Arial,sans-serif;
   font-size: 2rem;
   line-height: 1.2;
-  right: 0;
+  right: 0px;
   position: absolute;
-  top: 4px;
+  top: 40%;
   text-align: center;
-
-  @include square(25px);
+  height: 25px;
+  width: 35px;
 }
 
 
@@ -207,4 +207,24 @@
     max-height: 100%;
     @include vertical-align();
   }
+}
+
+.paginacao {
+  width: 100%;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.paginacao-item {
+  display: inline-block;
+}
+
+.paginacao-item a {
+  background-color: #152D65;
+  border-bottom: 4px solid #B7DCA0;
+  color: #FFF;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 13px;
+  margin: 0px 3px;
 }

@@ -166,6 +166,16 @@ class String {
     }
 
     /**
+     * Normal Text to Camel Case
+     *
+     * @param   string      $text           - Original Text
+     * @return  string                      - The CamelCased text
+     */
+    public static function camelCase($text) {
+        return ucwords(strtolower(utf8_encode($text)));
+    }
+
+    /**
      * Generates numeric intervals between 2 numbers
      * with a gap of specific percentage
      *

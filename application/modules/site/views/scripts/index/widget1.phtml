@@ -1,6 +1,6 @@
 <section class="container-list-imoveis">
     <div class="subtit-section">
-        <h2>Destaques de Venda</h2>
+        <h2>Destaques de Aluguel</h2>
     </div>
     <ul class="row list-imoveis">
         <?php foreach ($this->widget1 as $widget1) : ?>
@@ -32,6 +32,6 @@
         <?php endforeach; ?>
     </ul>
     <div class="text-right">
-        <a href="<?php echo $this->serverUrl() . BASEDIR;?>/imoveis/listagem?destaque=Sim&finalidade=venda" class="btn btn-ver-mais">VER TODOS</a>
+        <a href="<?php echo $this->serverUrl() . BASEDIR;?>/imoveis/listagem?destaque=Sim&finalidade=aluguel" class="btn btn-ver-mais">VER TODOS</a>
     </div>
 </section>

@@ -47,6 +47,12 @@ class Site_Form_FaleConoscoForm extends Zend_Form{
         $fone->addValidator($digits, true);
         $fone->addValidator($foneValidator, true);
         //--------------------------------------------------------
+        $cidade = new Zend_Form_Element_Text('cidade');
+        $cidade->setAttrib('class', 'form-control');
+        $cidade->setAttrib('required', false);
+        $cidade->setAttrib('accesskey', 'c');
+        $cidade->setRequired(false);
+        //--------------------------------------------------------
         $ddd = new Zend_Form_Element_Text('ddd');
         $ddd->setAttrib('class', 'form-control');
         $ddd->setAttrib('required', true);
@@ -77,6 +83,7 @@ class Site_Form_FaleConoscoForm extends Zend_Form{
         $this->addElement($fone);
         $this->addElement($ddd);
         $this->addElement($email);
+        $this->addElement($cidade);
         $this->addElement($mensagem);
 
         $this->setElementDecorators(array(

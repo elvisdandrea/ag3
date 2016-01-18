@@ -56,9 +56,9 @@
                     <!-- Previous -->
                     <?php if(isset($this->pagination->previous)):?>
                         <?php $this->params['page'] = $this->pagination->previous?>
-                        <li class="paginacao-item with-arrow"><a href="<?php echo $this->serverUrl() . BASEDIR;?>/imoveis/listagem?<?php echo http_build_query($this->params); ?>"><i class="icon-arrow-left"></i></a></li>
+                        <li class="paginacao-item with-arrow"><a href="<?php echo $this->serverUrl() . BASEDIR;?>/imoveis/listagem?<?php echo http_build_query($this->params); ?>"><i class="icon-left216"></i></a></li>
                     <?php else:?>
-                        <li class="paginacao-item with-arrow disabled"><a href="#"><i class="icon-arrow-left"></i></a></li>
+                        <li class="paginacao-item with-arrow disabled"><a href="#"><i class="icon-left216"></i></a></li>
                     <?php endif;?>
 
                     <!-- Pages List -->
@@ -74,9 +74,9 @@
                     <!-- Next -->
                     <?php if(isset($this->pagination->next)):?>
                         <?php $this->params['page'] = $this->pagination->next?>
-                        <li class="paginacao-item with-arrow"><a href="<?php echo $this->serverUrl() . BASEDIR;?>/imoveis/listagem?<?php echo http_build_query($this->params); ?>"><i class="icon-arrow-right"></i></a></li>
+                        <li class="paginacao-item with-arrow"><a href="<?php echo $this->serverUrl() . BASEDIR;?>/imoveis/listagem?<?php echo http_build_query($this->params); ?>"><i class="icon-keyboard53"></i></a></li>
                     <?php else:?>
-                        <li class="paginacao-item with-arrow disabled"><a href="#"><i class="icon-arrow-right"></i></a></li>
+                        <li class="paginacao-item with-arrow disabled"><a href="#"><i class="icon-keyboard53"></i></a></li>
                     <?php endif;?>
                 </ul>
             </div>
