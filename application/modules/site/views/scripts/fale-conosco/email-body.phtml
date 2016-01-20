@@ -1,5 +1,8 @@
 <h4>Contato enviado pelo site:</h4>
 <ul>
+    <?php if (isset($this->data['assunto'])) : ?>
+        <li><strong>Assunto: </strong><?php echo $this->data['assunto']?></li>
+    <?php endif; ?>
     <li><strong>Nome: </strong><?php echo $this->data['nome']?></li>
     <li><strong>Telefone: </strong><?php echo $this->data['fone']?></li>
     <li><strong>E-mail: </strong><?php echo $this->data['email']?></li>

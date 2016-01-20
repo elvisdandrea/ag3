@@ -170,11 +170,11 @@
         <h2>Características do Imóvel</h2>
     </div>
     <ul class="caracteristicas row">
-        <?php foreach($this->imovel['Caracteristicas'] as $characteristica => $value):?>
+        <?php foreach($this->imovel['Caracteristicas'] as $charac => $value):?>
             <?php if(strtolower($value) == 'sim'):?>
-                <li class="col-xs-12 col-sm-3"><span>&bull;</span> <?php echo $characteristica?></li>
+                <li class="col-xs-12 col-sm-3"><span>&bull;</span> <?php echo $charac?></li>
             <?php elseif(is_numeric($value)):?>
-                <li class="col-xs-12 col-sm-3"><span>&bull;</span> <?php echo $value . ' ' .$characteristica?></li>
+                <li class="col-xs-12 col-sm-3"><span>&bull;</span> <?php echo $value . ' ' . $charac?></li>
             <?php endif;?>
         <?php endforeach;?>
     </ul>
@@ -185,11 +185,11 @@
         <h2>Características do Condomínio</h2>
     </div>
     <ul class="caracteristicas row">
-        <?php foreach($this->imovel['InfraEstrutura'] as $characteristica => $value):?>
+        <?php foreach($this->imovel['InfraEstrutura'] as $charac => $value):?>
             <?php if(strtolower($value) == 'sim'):?>
-                <li class="col-xs-12 col-sm-3"><span>&bull;</span> <?php echo $characteristica?></li>
+                <li class="col-xs-12 col-sm-3"><span>&bull;</span> <?php echo $charac?></li>
             <?php elseif(is_numeric($value)):?>
-                <li class="col-xs-12 col-sm-3"><span>&bull;</span> <?php echo $value . ' ' .$characteristica?></li>
+                <li class="col-xs-12 col-sm-3"><span>&bull;</span> <?php echo $value . ' ' . $charac?></li>
             <?php endif;?>
         <?php endforeach;?>
     </ul>

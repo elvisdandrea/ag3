@@ -44,13 +44,13 @@ class FaleConoscoController extends Zend_Controller_Action{
                 $mail->addTo($config['contact_email'], 'Terrasul');
 
                 //  Teste Local
-//                $mail->addTo('elvis@gravi.com.br', 'Terrasul');
+//                $mail->addTo('elvis@gravi.com.br', 'AG3');
 
+                $assunto = isset($params['assunto']) ? $params['assunto'] : '';
                 $subjects = array(
-                    'contato'   => 'SITE TERRASUL - FORMULÁRIO DE CONTATO',
-                    'interesse' => 'SITE TERRASUL - INTERESSE EM IMÓVEL',
-                    'oferta'    => 'SITE TERRASUL - OFERTA',
-                    'ligamos'   => 'SITE TERRASUL - LIGAMOS PARA VOCÊ'
+                    'contato'   => 'SITE AG3 - ' . $assunto . ' - CONTATO PELO SITE',
+                    'interesse' => 'SITE AG3 - ' . $assunto . ' - INTERESSE EM IMÓVEL',
+                    'ligamos'   => 'SITE AG3 - ' . $assunto . ' - LIGAMOS PARA VOCÊ'
                 );
 
                 $subject = 'contato';
