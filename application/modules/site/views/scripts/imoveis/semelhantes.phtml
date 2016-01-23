@@ -2,52 +2,18 @@
     <h2>Imóveis semelhantes</h2>
 </div>
 <ul class="list-semelhantes row">
+    <?php foreach ($this->semelhantes as $semelhante) : ?>
     <li class="col-xs-12 col-sm-6 col-md-3 semelhantes-item">
         <a href="" class="semelhantes-link">
-            <div class="list-imoveis-img" style="background-image: url(http://placehold.it/1500x480)"><span><i class="icon-add182"></i></span></div>
+            <div class="list-imoveis-img" style="background-image: url(<?php echo $semelhante['FotoDestaque']; ?>)"><span><i class="icon-add182"></i></span></div>
             <div class="list-imoveis-data">
                 <p>
-                    Apartamento <br>
-                    Padre Reus São Leopoldo
+                    <?php echo $semelhante['Categoria']; ?> <br>
+                    <?php echo $semelhante['Bairro'] . ' - ' . $semelhante['Cidade']; ?>
                 </p>
-                <h3>R$ 1.200,00</h3>
+                <h3><?php echo String::asCurrency($semelhante['ValorVenda']); ?></h3>
             </div>
         </a>
     </li>
-    <li class="col-xs-12 col-sm-6 col-md-3 semelhantes-item">
-        <a href="" class="semelhantes-link">
-            <div class="list-imoveis-img" style="background-image: url(http://placehold.it/1500x480)"><span><i class="icon-add182"></i></span></div>
-            <div class="list-imoveis-data">
-                <p>
-                    Apartamento <br>
-                    Padre Reus São Leopoldo
-                </p>
-                <h3>R$ 1.200,00</h3>
-            </div>
-        </a>
-    </li>
-    <li class="col-xs-12 col-sm-6 col-md-3 semelhantes-item">
-        <a href="" class="semelhantes-link">
-            <div class="list-imoveis-img" style="background-image: url(http://placehold.it/1500x480)"><span><i class="icon-add182"></i></span></div>
-            <div class="list-imoveis-data">
-                <p>
-                    Apartamento <br>
-                    Padre Reus São Leopoldo
-                </p>
-                <h3>R$ 1.200,00</h3>
-            </div>
-        </a>
-    </li>
-    <li class="col-xs-12 col-sm-6 col-md-3 semelhantes-item">
-        <a href="" class="semelhantes-link">
-            <div class="list-imoveis-img" style="background-image: url(http://placehold.it/1500x480)"><span><i class="icon-add182"></i></span></div>
-            <div class="list-imoveis-data">
-                <p>
-                    Apartamento <br>
-                    Padre Reus São Leopoldo
-                </p>
-                <h3>R$ 1.200,00</h3>
-            </div>
-        </a>
-    </li>
+    <?php endforeach; ?>
 </ul>

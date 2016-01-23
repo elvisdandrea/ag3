@@ -201,6 +201,9 @@
 <div id="mapa-imovel" class="map">
 </div>
 
+<?php if (count($this->semelhantes) > 0) : ?>
+    <?php echo $this->partial('imoveis/semelhantes.phtml', array('semelhantes' => $this->semelhantes, 'filter_semelhantes' => $this->filter_semelhantes)); ?>
+<?php endif; ?>
 
 </section>
 </div>

@@ -196,7 +196,7 @@ class ImoveisController extends Zend_Controller_Action{
 
         $filters['Codigo'] = array('!=', $imovel['Codigo']);
 
-        $vista->setPaginationParam(1, 3);
+        $vista->setPaginationParam(1, 4);
         $vista->buscaImoveis($filters);
 
 
