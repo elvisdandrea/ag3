@@ -72,7 +72,7 @@
                 </div>
                 <div class="row actions-imovel">
                     <div class="col-xs-3 text-center">
-                        <a href="<?php echo $this->serverUrl() . BASEDIR?>/imoveis/add-fav?codigo=<?php echo $this->imovel['Codigo']; ?>">
+                        <a id="add-fav" href="<?php echo $this->serverUrl() . BASEDIR?>/imoveis/add-fav?codigo=<?php echo $this->imovel['Codigo']; ?>">
                             <i class="icon-star174"></i>
                             <span>Adicionar aos favoritos</span>
                         </a>
@@ -207,7 +207,9 @@
 
 </section>
 </div>
-
+        <div id="fav-content" style="display: none;">
+            <p class="arial text-center">Você adicionou esse imóvel como um de seus favoritos!</p>
+        </div>
 <script>
     GMaps.mapLatitude  = '<?php echo $this->imovel['Latitude'];  ?>';
     GMaps.mapLongitude = '<?php echo $this->imovel['Longitude']; ?>';
