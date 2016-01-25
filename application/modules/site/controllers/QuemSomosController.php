@@ -22,13 +22,18 @@ class QuemSomosController extends Zend_Controller_Action {
             $grouped[$user['group_name']][] = $user;
         });
 
-        $sorted = array(
-            'Diretoria'             => $grouped['Diretoria'],
-            'Gerência'              => $grouped['Gerência'],
-            'Administrativo'        => $grouped['Administrativo'],
-            'Recepção'              => $grouped['Recepção'],
-            'Contratos/Pós Venda'   => $grouped['Contratos/Pós Venda'],
+        $sortList = array(
+            'Diretoria',
+            'Gerencia',
+            'Administrativo',
+            'Recepção',
+            'Consultoras'
         );
+
+        $sorted = array();
+        array_walk($grouped, function(&$item, $key) use (&$sorted, $sortList){
+            !in_array($key, $sortList) || $sorted[$key] = $item;
+        });
 
         $corretores = $grouped['Corretores'];
 

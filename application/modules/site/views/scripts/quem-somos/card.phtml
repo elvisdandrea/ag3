@@ -1,0 +1,26 @@
+<div class="col-xs-12 col-sm-6 col-lg-6">
+    <div class="profile-card">
+        <div class="col-sm-4 text-left profile-box">
+            <div class="profile-img">
+                <img class="" src="<?php echo ($this->user['avatar'] != '' ? $this->user['avatar'] : $this->serverUrl() . BASEDIR . '/res/imgs/no-profile.jpg');?>">
+            </div>
+        </div>
+        <div class="col-sm-8 profile-info">
+            <div class="col-sm-12 text-left  profile-box">
+                <span class="emp-name"><?php echo $this->user['user_name']; ?></span>
+            </div>
+            <div class="col-sm-12 text-left  profile-box">
+                <span><?php echo $this->user['email']; ?></span>
+            </div>
+            <div class="col-sm-12 text-left  profile-box">
+                Fone:<span> <?php echo $this->user['phone']; ?></span>
+            </div>
+            <div class="col-sm-12 text-left  profile-box">
+                <span><?php echo $this->user['role']; ?></span>
+            </div>
+            <div class="img-wm">
+                <img src="<?php echo $this->serverUrl() . BASEDIR; ?>/res/imgs/logo-tree.png" />
+            </div>
+        </div>
+    </div>
+</div>

@@ -4,30 +4,15 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-lg-12">
                 <div class="title-view">
-                    <h3>EQUIPE AG3 IMÓVEIS</h3>
+                    <h1>EQUIPE AG3 IMÓVEIS</h1>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <?php foreach ($this->groups as $group => $users) : ?>
-                            <div class="col-lg-6">
-                                <h4 class="title-view-small"><?php echo $group; ?></h4>
+                            <div class="col-lg-12">
+                                <h2 class="title-view-small"><?php echo $group; ?></h2>
                                 <?php foreach ($users as $user) : ?>
-                                    <div class="col-xs-12 col-sm-6 col-lg-12 profile-card">
-                                        <div class="col-sm-2 text-left profile-box">
-                                            <div class="profile-img">
-                                                <img class="" src="<?php echo ($user['avatar'] != '' ? $user['avatar'] : $this->serverUrl() . BASEDIR . '/res/imgs/no-profile.jpg');?>">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-10 text-left  profile-box">
-                                            <span><?php echo $user['user_name']; ?></span>
-                                        </div>
-                                        <div class="col-sm-10 text-left  profile-box">
-                                            <span><?php echo $user['email']; ?></span>
-                                        </div>
-                                        <div class="col-sm-10 text-left  profile-box">
-                                            <span><?php echo $user['role']; ?></span>
-                                        </div>
-                                    </div>
+                                    <?php echo $this->partial('quem-somos/card.phtml', array('user' => $user)); ?>
                                 <?php endforeach; ?>
                             </div>
                         <?php endforeach; ?>
@@ -35,24 +20,9 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <h4 class="title-view-small">Corretores</h4>
+                        <h2 class="title-view-small">Corretores</h2>
                         <?php foreach ($this->corretores as $corretor) : ?>
-                            <div class="col-xs-12 col-sm-4 col-lg-6 profile-card">
-                                <div class="col-sm-2 text-left profile-box">
-                                    <div class="profile-img">
-                                        <img class="" src="<?php echo ($corretor['avatar'] != '' ? $corretor['avatar'] : $this->serverUrl() . BASEDIR . '/res/imgs/no-profile.jpg');?>">
-                                    </div>
-                                </div>
-                                <div class="col-sm-10 text-left  profile-box">
-                                    <span><?php echo $corretor['user_name']; ?></span>
-                                </div>
-                                <div class="col-sm-10 text-left  profile-box">
-                                    <span><?php echo $corretor['email']; ?></span>
-                                </div>
-                                <div class="col-sm-10 text-left  profile-box">
-                                    <span><?php echo $corretor['role']; ?></span>
-                                </div>
-                            </div>
+                            <?php echo $this->partial('quem-somos/card.phtml', array('user' => $corretor)); ?>
                         <?php endforeach; ?>
                     </div>
                 </div>

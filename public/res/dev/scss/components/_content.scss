@@ -383,3 +383,52 @@
   float: none !important;
   margin: 0px auto !important;
 }
+
+.profile-img {
+  width: 140px;
+  overflow: hidden;
+  height: 140px;
+}
+
+.profile-img img {
+  width: 100%;
+}
+
+.profile-card {
+  padding: 0.6em;
+  margin: 20px 0px;
+  background-color: #B7DCA0;
+  height: 160px;
+}
+
+.profile-box {
+  width: 100%;
+}
+
+.profile-info {
+  background-color: #152D65;
+  color: #FFF;
+  height: 140px;
+  padding: .6em;
+}
+
+.emp-name {
+  font-size: 27px;
+}
+
+.img-wm {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 5px;
+  height: 40px;
+  right: 0;
+  margin-right: 5px;
+}
+
+.img-wm img {
+  height: 100%;
+}
+
+.title-view-small {
+  border-bottom: 2px solid #00ABD3;
+}
