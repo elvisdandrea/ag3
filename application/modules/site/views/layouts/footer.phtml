@@ -5,13 +5,13 @@
                 <nav class="menu-footer">
                     <h3>Acesse nosso menu:</h3>
                     <ul>
-                        <li><a href="#"><i class="icon-keyboard53"></i> HOME</a></li>
-                        <li><a href="#"><i class="icon-keyboard53"></i> EMPRESA</a></li>
-                        <li><a href="#"><i class="icon-keyboard53"></i> VENDA</a></li>
-                        <li><a href="#"><i class="icon-keyboard53"></i> LOCAÇÕES</a></li>
-                        <li><a href="#"><i class="icon-keyboard53"></i> PARCEIROS</a></li>
-                        <li><a href="#"><i class="icon-keyboard53"></i> SERVIÇOS</a></li>
-                        <li><a href="#"><i class="icon-keyboard53"></i> CONTATO</a></li>
+                        <li><a href="<?php echo $this->serverUrl() . BASEDIR; ?>"><i class="icon-keyboard53"></i> HOME</a></li>
+                        <li><a href="<?php echo $this->serverUrl() . BASEDIR; ?>/quem-somos"><i class="icon-keyboard53"></i> EMPRESA</a></li>
+                        <li><a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/listagem?finalidade=venda"><i class="icon-keyboard53"></i> VENDA</a></li>
+                        <li><a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/listagem?finalidade=aluguel"><i class="icon-keyboard53"></i> LOCAÇÕES</a></li>
+                        <li><a href="<?php echo $this->serverUrl() . BASEDIR; ?>/parceiros"><i class="icon-keyboard53"></i> PARCEIROS</a></li>
+                        <li><a href="<?php echo $this->serverUrl() . BASEDIR; ?>/servicos"><i class="icon-keyboard53"></i> SERVIÇOS</a></li>
+                        <li><a href="<?php echo $this->serverUrl() . BASEDIR; ?>/fale-conosco"><i class="icon-keyboard53"></i> CONTATO</a></li>
                     </ul>
                 </nav>
             </div>
@@ -23,7 +23,7 @@
                         Assine nossa Newsletter:
                     </h3>
 
-                    <form action="#" class="form-newsletter">
+                    <form action="<?php echo $this->serverUrl() . BASEDIR; ?>/fale-conosco/newsletter" class="form-newsletter">
                         <div class="form-group text-left">
                             <label for="nome-news">Nome:</label>
                             <input type="text" id="nome-news" name="nome-news" class="form-control">
@@ -44,12 +44,12 @@
             <div class="col-xs-12 col-sm-4">
                 <div class="social-footer text-right">
                     <h3>Acesse nossas redes sociais:</h3>
-                    <span class="disp-blockdisp-block"><span class="block"><a href="#" class="social-facebook" title="Facebook">Facebook <i class="icon-facebook2"></i></a></span>
-                    <span class="disp-block"><a href="#" class="social-twitter" title="Twitter">Twitter <i class="icon-logo22"></i></a></span>
-                    <span class="disp-block"><a href="#" class="social-youtube" title="YouTube">YouTube <i class="icon-youtube30"></i></a></span>
-                    <span class="disp-block"><a href="#" class="social-instagram" title="Instagram">Instagram <i class="icon-instagram19"></i></a></span>
-                    <span class="disp-block"><a href="#" class="social-phone" title="Ligamos para você">Ligamos para você <i class="icon-phone72"></i></a></span>
-                    <span class="disp-block"><a href="#" class="social-favorito" title="Adicione seus favoritos">Adicione seus favoritos <i class="icon-star174"></i></a></span>
+                    <span class="disp-blockdisp-block"><span class="block"><a href="https://www.facebook.com/AG3-IMÓVEIS-209969885730089" class="social-facebook" title="Facebook">Facebook <i class="icon-facebook2"></i></a></span>
+                    <span class="disp-block"><a target="_blank" href="https://twitter.com/AG3Imoveis" class="social-twitter" title="Twitter">Twitter <i class="icon-logo22"></i></a></span>
+                    <span class="disp-block"><a target="_blank" href="https://www.youtube.com/channel/UCllygh0W1v23FnYMju7fi9g" class="social-youtube" title="YouTube">YouTube <i class="icon-youtube30"></i></a></span>
+                    <span class="disp-block"><a target="_blank" href="http://www.online-instagram.com/user/ag3imoveis/497345564/873097521344861272_497345564" class="social-instagram" title="Instagram">Instagram <i class="icon-instagram19"></i></a></span>
+                    <span class="disp-block"><a target="_blank" href="#" class="social-phone" title="Ligamos para você">Ligamos para você <i class="icon-phone72"></i></a></span>
+                    <span class="disp-block"><a target="_blank" href="<?php echo $this->serverUrl() . BASEDIR?>/imoveis/listagem?e=favoritos" class="social-favorito" title="Adicione seus favoritos">Confira seus favoritos <i class="icon-star174"></i></a></span>
                 </div>
             </div>
         </div>

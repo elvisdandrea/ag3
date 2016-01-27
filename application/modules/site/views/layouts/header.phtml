@@ -5,23 +5,23 @@
         </div>
         <button type="button" class="open-menu"><i class="icon-menu62"></i></button>
         <div class="social">
-            <a href="#" class="social-item social-facebook" title="Facebook">
+            <a href="https://www.facebook.com/AG3-IMÓVEIS-209969885730089" target="_blank" class="social-item social-facebook" title="Facebook">
                 <i class="icon-facebook2"></i>
                 <span>Curta a nossa página no Facebook!</span>
             </a>
-            <a href="#" class="social-item social-twitter" title="Twitter">
+            <a href="https://twitter.com/AG3Imoveis" target="_blank" class="social-item social-twitter" title="Twitter">
                 <i class="icon-logo22"></i>
                 <span>Siga-nos no Twitter!</span>
             </a>
-            <a href="#" class="social-item social-youtube" title="YouTube">
+            <a href="https://www.youtube.com/channel/UCllygh0W1v23FnYMju7fi9g" target="_blank" class="social-item social-youtube" title="YouTube">
                 <i class="icon-youtube30"></i>
                 <span>Veja nossos imóveis no Youtube!</span>
             </a>
-            <a href="#" class="social-item social-instagram" title="Instagram">
+            <a href="http://www.online-instagram.com/user/ag3imoveis/497345564/873097521344861272_497345564" target="_blank" class="social-item social-instagram" title="Instagram">
                 <i class="icon-instagram19"></i>
                 <span>Acompanhe nossas ofertas no Instagram!</span>
             </a>
-            <a href="#" class="social-item social-phone" title="Ligamos para você">
+            <a href="#ligamos-header" class="social-item social-phone lightbox" title="Ligamos para você">
                 <i class="icon-phone72"></i>
                 <span>Ligamos para você</span>
             </a>
@@ -29,7 +29,7 @@
                 <i class="icon-star174"></i>
                 <span>Confira seus favoritos</span>
             </a>
-            <a href="#" class="social-item social-whatsapp" title="WhatsApp">
+            <a href="tel://+555197392641" class="social-item social-whatsapp" title="WhatsApp">
                 <i class="icon-socialnetwork179"></i>
                 <span>Contate-nos pelo Whatsapp!</span>
             </a>
@@ -49,3 +49,28 @@
         </ul>
     </div>
 </nav>
+
+<div class="col-lg-12" id="ligamos-header" style="display: none;">
+    <form action="<?php echo $this->serverUrl() . BASEDIR; ?>/fale-conosco" method="post">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <input class="form-control" name="nome" type="text" placeholder="Seu Nome"/>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Seu telefone"/>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Seu e-mail"/>
+                </div>
+                <div class="form-group">
+                    <textarea name="mensagem" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="hidden" name="subject" value="ligamos"/>
+                    <input type="submit" class="btn" value="Enviar">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
