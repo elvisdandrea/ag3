@@ -12,7 +12,7 @@ function isLocal() {
 }
 
 isLocal() ?
-    define('BASEDIR', '/ag3/public') : define('BASEDIR', '');
+    define('BASEDIR', '/ag3/public') : define('BASEDIR', '/public');
 
 
 // Define path to application directory

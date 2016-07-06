@@ -195,15 +195,15 @@
     </ul>
 <?php endif; ?>
 
+s<?php if (count($this->semelhantes) > 0) : ?>
+    <?php echo $this->partial('imoveis/semelhantes.phtml', array('semelhantes' => $this->semelhantes, 'filter_semelhantes' => $this->filter_semelhantes)); ?>
+<?php endif; ?>
+
 <div class="subtit-section">
     <h2>Localização do imóvel</h2>
 </div>
 <div id="mapa-imovel" class="map">
 </div>
-
-<?php if (count($this->semelhantes) > 0) : ?>
-    <?php echo $this->partial('imoveis/semelhantes.phtml', array('semelhantes' => $this->semelhantes, 'filter_semelhantes' => $this->filter_semelhantes)); ?>
-<?php endif; ?>
 
 </section>
 </div>

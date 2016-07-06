@@ -1,0 +1,37 @@
+<section class="container-list-imoveis">
+    <div class="subtit-section">
+        <h2>Lançamentos</h2>
+    </div>
+    <ul class="row list-imoveis">
+        <?php foreach ($this->widget3 as $widget3) : ?>
+            <li class="col-xs-12 col-sm-6 col-md-3 list-imoveis-item">
+                <a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/detalhes/codigo/<?= $widget3['Codigo']; ?>/<?php echo $widget3['Categoria'] . '/' . $widget3['Bairro'] . '/' . $widget3['Cidade'] . '/' . (intval($widget3['Dormitorios']) > 0 ? '-' . $widget3['Dormitorios'] : '') ?>" class="list-imoveis-link">
+                    <div class="list-imoveis-img" style="background-image: url(<?php echo $widget3['FotoDestaque']; ?>)"></div>
+                    <div class="list-imoveis-data">
+                        <span class="disp-block">
+                            <i class="icon-city33"></i> <?php echo $widget3['Categoria']; ?>
+                        </span>
+                        <span class="disp-block">
+                            <i class="icon-situation"></i> <strong><?php echo $widget3['Bairro']; ?> - <?php echo $widget3['Cidade']; ?></strong>
+                        </span>
+                        <?php if (intval($widget3['Dormitorios']) > 0) : ?>
+                            <span class="disp-block">
+                                <i class="icon-bed51"></i> <?php echo $widget3['Dormitorios']; ?> dorm.
+                            </span>
+                        <?php endif; ?>
+                        <span class="disp-block">
+                            <i class="icon-car171"></i> <?php echo $widget3['Vagas']; ?> vagas
+                        </span>
+                    </div>
+                    <div class="list-imoveis-price">
+                        <span class="txt-price"><?php echo String::asCurrency($widget3['ValorVenda']); ?></span>
+                        <span class="plus">+</span>
+                    </div>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+    <div class="text-right">
+        <a href="<?php echo $this->serverUrl() . BASEDIR;?>/imoveis/listagem?lancamento=Sim&finalidade=venda" class="btn btn-ver-mais">VER TODOS</a>
+    </div>
+</section>

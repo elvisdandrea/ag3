@@ -65,6 +65,21 @@ class IndexController extends Zend_Controller_Action
         $vista->buscaImoveis($filtroWidget2, $pagination, $order);
         $this->view->widget2 = $vista->getResult();
 
+
+        $filtroWidget3 = array(
+            'Destinacao'     => 'VENDA',
+            'Lancamento'     => 'Sim'
+        );
+
+        $pagination = array(
+            'pagina'     => 1,
+            'quantidade' => 4
+        );
+
+        $vista->buscaImoveis($filtroWidget3, $pagination, $order);
+        $this->view->widget3 = $vista->getResult();
+
+
     }
 
 }
