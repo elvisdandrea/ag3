@@ -1,12 +1,23 @@
-<div
+<!--SLIDE-->
+<?php echo $this->render('index/slider.phtml'); ?>
+<!--/SLIDE-->
+<div class="container">
+    <!--PESQUISA-->
+    <?php echo $this->partial('index/busca_form.phtml', array(
+        'listas' => $this->listas,
+        'innerDivClass' => 'pesquisa-home',
+        'buttonText' => 'Buscar Imóveis',
+    )); ?>
+    <!--/PESQUISA-->
 
-    style="width: 90%; text-align: center; margin-top: 100px"
-    >
-    <h2>Prezado(a) Cliente,</h2>
-    <h3>informamos que nosso site está em manutenção.</h3>
-    <h3>Em breve, e para melhor atendê-lo, estaremos on-line e com novidades!</h3>
-    <h3>Informações de imóveis em oferta poderão ser obtidas nas redes sociais, por e-mail (
-        <a href="mailto:ag3@ag3imoveis.com.br">ag3@ag3imoveis.com.br</a>), telefone (51 3566.2999),
-        whatsapp (51 9865.7308) ou presencialmente</h3>
-    <h3>Agradecemos a compreensão e aguardamos a sua visita em nossa sede! Será um prazer recebê-lo(a)!</h3>
+    <!--WIDGETS HOME-->
+    <section class="destaques-home">
+        <?php if (count($this->widget3)) echo $this->render('index/widget3.phtml'); ?>
+        <?php if (count($this->widget2)) echo $this->render('index/widget2.phtml'); ?>
+        <?php if (count($this->widget1)) echo $this->render('index/widget1.phtml'); ?>
+        <!--/WIDGETS HOME-->
+    </section>
+
+
+
 </div>

@@ -5,7 +5,6 @@
 
 .slider-home {
   height: 210px;
-  margin-bottom: 25px;
   position: relative;
 
   @media (min-width: $screen-sm-min) {
@@ -60,8 +59,8 @@
   position: relative;
 
   h1 {
-    background-color: #fff;
-    color: $blue;
+    background-color: #EEE;
+    color: #152D65;
     display: inline-block;
     font-size: 3rem;
     font-weight: normal;
@@ -69,6 +68,8 @@
     padding: 0 10px;
     position: relative;
     z-index: 10;
+    border-radius: 10px;
+    border-bottom: 1px solid #CCC;
   }
 
   @media (min-width: $screen-sm-min) {
@@ -98,7 +99,7 @@
 
 .subtit-section {
   border-bottom: 1px solid $green;
-  margin: 50px 0 25px;
+  margin: 0 0 25px;
   padding-bottom: 10px;
 
   h2 {
