@@ -4,7 +4,7 @@
 <ul class="list-semelhantes row">
     <?php foreach ($this->semelhantes as $semelhante) : ?>
     <li class="col-xs-12 col-sm-6 col-md-3 semelhantes-item">
-        <a href="" class="semelhantes-link">
+        <a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/detalhes/codigo/<?= $semelhante['Codigo']; ?>/<?php echo $semelhante['Categoria'] . '/' . $semelhante['Bairro'] . '/' . $semelhante['Cidade'] . '/' . (intval($semelhante['Dormitorios']) > 0 ? '-' . $semelhante['Dormitorios'] : '') ?>" class="semelhantes-link">
             <div class="list-imoveis-img" style="background-image: url(<?php echo $semelhante['FotoDestaque']; ?>)"><span><i class="icon-add182"></i></span></div>
             <div class="list-imoveis-data">
                 <p>

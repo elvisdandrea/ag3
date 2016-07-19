@@ -195,7 +195,7 @@
     </ul>
 <?php endif; ?>
 
-s<?php if (count($this->semelhantes) > 0) : ?>
+<?php if (count($this->semelhantes) > 0) : ?>
     <?php echo $this->partial('imoveis/semelhantes.phtml', array('semelhantes' => $this->semelhantes, 'filter_semelhantes' => $this->filter_semelhantes)); ?>
 <?php endif; ?>
 
