@@ -58,6 +58,8 @@ class ImoveisController extends Zend_Controller_Action{
         if (isset($params['terrea']) && $params['terrea'] == 'on') $filtros['Terrea'] = 'Sim';
 
 
+        empty($params['destinacao']) || $filtros['Destinacao'] = $params['destinacao'];
+
         if(!empty($params['order'])){
 
             switch ($params['order']) {
@@ -188,7 +190,7 @@ class ImoveisController extends Zend_Controller_Action{
             $filters['Dormitorios'] = array('>=', $imovel['Dormitorios']);
 
         if ($imovel['Vagas'] > 0)
-            $filters['Vagas'] = array('>=', $imovel['Dormitorios']);
+            $filters['Vagas'] = array('>=', $imovel['Vagas']);
 
         $min = (intval($imovel['ValorVenda']) - ((intval($imovel['ValorVenda']) * 20) / 100));
         $max = (intval($imovel['ValorVenda']) + ((intval($imovel['ValorVenda']) * 20) / 100));

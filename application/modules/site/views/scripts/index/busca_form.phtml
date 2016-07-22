@@ -35,8 +35,8 @@ $params = Zend_Controller_Front::getInstance()->getRequest()->getParams();
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <div class="form-group">
                         <select name="destinacao" id="destinacao" class="form-control">
-                            <option value="VENDA">Venda</option>
-                            <option value="ALUGUEL">Locação</option>
+                            <option <?php if (isset($params['destinacao']) && $params['destinacao'] == 'VENDA') : ?> selected <?php endif; ?> value="VENDA">Venda</option>
+                            <option <?php if (isset($params['destinacao']) && $params['destinacao'] == 'ALUGUEL') : ?> selected <?php endif; ?> value="ALUGUEL">Locação</option>
                         </select>
                     </div>
                 </div>
@@ -45,7 +45,7 @@ $params = Zend_Controller_Front::getInstance()->getRequest()->getParams();
                         <select name="cidade" id="cidade" class="form-control">
                             <option value="">Cidade</option>
                             <?php foreach ($this->listas['Cidade'] as $cidade) : ?>
-                                <option value="<?php echo $cidade; ?>"><?php echo String::camelCase($cidade); ?></option>
+                                <option value="<?php echo $cidade; ?>" <?php if (isset($params['cidade']) && $params['cidade'] == $cidade) : ?> selected <?php endif; ?>><?php echo String::camelCase($cidade); ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
@@ -54,42 +54,42 @@ $params = Zend_Controller_Front::getInstance()->getRequest()->getParams();
                     <div class="form-group">
                         <select name="dormitorios" id="dormitorios" class="form-control">
                             <option value="">Dormitórios</option>
-                            <option value="1">1 Dormitório</option>
-                            <option value="2">2 Dormitórios</option>
-                            <option value="3">3 Dormitórios</option>
-                            <option value="4">4 ou mais</option>
+                            <option <?php if (isset($params['dormitorios']) && $params['dormitorios'] == 1) : ?> selected <?php endif; ?> value="1">1 Dormitório</option>
+                            <option <?php if (isset($params['dormitorios']) && $params['dormitorios'] == 2) : ?> selected <?php endif; ?> value="2">2 Dormitórios</option>
+                            <option <?php if (isset($params['dormitorios']) && $params['dormitorios'] == 3) : ?> selected <?php endif; ?> value="3">3 Dormitórios</option>
+                            <option <?php if (isset($params['dormitorios']) && $params['dormitorios'] == 4) : ?> selected <?php endif; ?> value="4">4 ou mais</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <div class="form-group">
-                        <select name="preco-inicial" id="preco-inicial" class="form-control">
+                        <select name="valor_min" id="preco-inicial" class="form-control">
                             <option value="">Preço de...</option>
-                            <option value="50000">R$ 50 mil</option>
-                            <option value="100000">R$ 100 mil</option>
-                            <option value="200000">R$ 200 mil</option>
-                            <option value="300000">R$ 300 mil</option>
-                            <option value="400000">R$ 400 mil</option>
-                            <option value="500000">R$ 500 mil</option>
-                            <option value="600000">R$ 600 mil</option>
-                            <option value="800000">R$ 800 mil</option>
-                            <option value="1000000">R$ 1 milhão</option>
+                            <option <?php if (isset($params['valor_min']) && $params['valor_min'] == 50000) : ?> selected <?php endif; ?> value="50000">R$ 50 mil</option>
+                            <option <?php if (isset($params['valor_min']) && $params['valor_min'] == 100000) : ?> selected <?php endif; ?> value="100000">R$ 100 mil</option>
+                            <option <?php if (isset($params['valor_min']) && $params['valor_min'] == 200000) : ?> selected <?php endif; ?> value="200000">R$ 200 mil</option>
+                            <option <?php if (isset($params['valor_min']) && $params['valor_min'] == 300000) : ?> selected <?php endif; ?> value="300000">R$ 300 mil</option>
+                            <option <?php if (isset($params['valor_min']) && $params['valor_min'] == 400000) : ?> selected <?php endif; ?> value="400000">R$ 400 mil</option>
+                            <option <?php if (isset($params['valor_min']) && $params['valor_min'] == 500000) : ?> selected <?php endif; ?> value="500000">R$ 500 mil</option>
+                            <option <?php if (isset($params['valor_min']) && $params['valor_min'] == 600000) : ?> selected <?php endif; ?> value="600000">R$ 600 mil</option>
+                            <option <?php if (isset($params['valor_min']) && $params['valor_min'] == 800000) : ?> selected <?php endif; ?> value="800000">R$ 800 mil</option>
+                            <option <?php if (isset($params['valor_min']) && $params['valor_min'] == 1000000) : ?> selected <?php endif; ?> value="1000000">R$ 1 milhão</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <div class="form-group">
-                        <select name="preco-final" id="preco-final" class="form-control">
+                        <select name="valor_max" id="preco-final" class="form-control">
                             <option value="">Preço até...</option>
-                            <option value="150000">R$ 150 mil</option>
-                            <option value="250000">R$ 250 mil</option>
-                            <option value="350000">R$ 350 mil</option>
-                            <option value="450000">R$ 450 mil</option>
-                            <option value="650000">R$ 650 mil</option>
-                            <option value="850000">R$ 850 mil</option>
-                            <option value="1000000">R$ 1 milhao</option>
-                            <option value="1500000">R$ 1,5 milhão</option>
-                            <option value="30000000">Mais de R$ 1,5 milhão</option>
+                            <option <?php if (isset($params['valor_max']) && $params['valor_max'] == 150000) : ?> selected <?php endif; ?> value="150000">R$ 150 mil</option>
+                            <option <?php if (isset($params['valor_max']) && $params['valor_max'] == 250000) : ?> selected <?php endif; ?> value="250000">R$ 250 mil</option>
+                            <option <?php if (isset($params['valor_max']) && $params['valor_max'] == 350000) : ?> selected <?php endif; ?> value="350000">R$ 350 mil</option>
+                            <option <?php if (isset($params['valor_max']) && $params['valor_max'] == 450000) : ?> selected <?php endif; ?> value="450000">R$ 450 mil</option>
+                            <option <?php if (isset($params['valor_max']) && $params['valor_max'] == 650000) : ?> selected <?php endif; ?> value="650000">R$ 650 mil</option>
+                            <option <?php if (isset($params['valor_max']) && $params['valor_max'] == 850000) : ?> selected <?php endif; ?> value="850000">R$ 850 mil</option>
+                            <option <?php if (isset($params['valor_max']) && $params['valor_max'] == 1000000) : ?> selected <?php endif; ?> value="1000000">R$ 1 milhao</option>
+                            <option <?php if (isset($params['valor_max']) && $params['valor_max'] == 1500000) : ?> selected <?php endif; ?> value="1500000">R$ 1,5 milhão</option>
+                            <option <?php if (isset($params['valor_max']) && $params['valor_max'] == 30000000) : ?> selected <?php endif; ?> value="30000000">Mais de R$ 1,5 milhão</option>
                         </select>
                     </div>
                 </div>
@@ -98,7 +98,7 @@ $params = Zend_Controller_Front::getInstance()->getRequest()->getParams();
                         <select name="tipo" id="tipo" class="form-control">
                             <option value="">Tipo de Imóvel</option>
                             <?php foreach ($this->listas['Categoria'] as $categoria) : ?>
-                                <option value="<?php echo $categoria; ?>"><?php echo $categoria; ?></option>
+                                <option value="<?php echo $categoria; ?>" <?php if (isset($params['tipo']) && $params['tipo'] == $categoria) : ?> selected <?php endif; ?>><?php echo $categoria; ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
@@ -108,25 +108,25 @@ $params = Zend_Controller_Front::getInstance()->getRequest()->getParams();
                         <select name="bairro" id="bairro" class="form-control">
                             <option value="">Bairro</option>
                             <?php foreach ($this->listas['Bairro'] as $bairro) : ?>
-                                <option value="<?php echo $bairro; ?>"><?php echo String::camelCase($bairro); ?></option>
+                                <option value="<?php echo $bairro; ?>" <?php if (isset($params['bairro']) && $params['bairro'] == $bairro) : ?> selected <?php endif; ?>><?php echo String::camelCase($bairro); ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-3">
                     <div class="form-group">
-                        <select name="garagem" id="garagem" class="form-control">
+                        <select name="vagas" id="garagem" class="form-control">
                             <option value="">Garagem</option>
-                            <option value="1">1 Vaga</option>
-                            <option value="2">2 Vagas</option>
-                            <option value="3">3 Vagas</option>
-                            <option value="4">4 ou mais</option>
+                            <option <?php if (isset($params['vagas']) && $params['vagas'] == 1) : ?> selected <?php endif; ?> value="1">1 Vaga</option>
+                            <option <?php if (isset($params['vagas']) && $params['vagas'] == 2) : ?> selected <?php endif; ?> value="2">2 Vagas</option>
+                            <option <?php if (isset($params['vagas']) && $params['vagas'] == 3) : ?> selected <?php endif; ?> value="3">3 Vagas</option>
+                            <option <?php if (isset($params['vagas']) && $params['vagas'] == 4) : ?> selected <?php endif; ?> value="4">4 ou mais</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-6">
                     <div class="form-group">
-                        <input type="text" name="codigo" id="codigo" class="form-control" placeholder="Busque por código">
+                        <input type="text" name="codigo" id="codigo" class="form-control" placeholder="Busque por código" <?php if (isset($params['codigo'])) : ?> value="<?php echo $params['codigo']; ?>" <?php endif; ?>>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-6">
