@@ -58,6 +58,8 @@ class ImoveisController extends Zend_Controller_Action{
         if (isset($params['terrea']) && $params['terrea'] == 'on') $filtros['Terrea'] = 'Sim';
 
 
+        // TODO: validate destination
+
         empty($params['destinacao']) || $filtros['Destinacao'] = $params['destinacao'];
 
         if(!empty($params['order'])){

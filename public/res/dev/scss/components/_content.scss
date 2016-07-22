@@ -23,21 +23,26 @@
 .title-slider {
   max-width: 1000px;
   margin: 0px auto;
-  font-size: 3.9rem;
+  font-size: 2.9rem;
   color: #FFF;
   text-shadow: 1px 1px 1px #152D65;
 
   @media (min-width: $screen-lg-min) {
-    font-size: 6.9rem;
+    font-size: 3.9rem;
   }
 }
 
 .list-slider {
   margin-top: 1em;
   margin-bottom: .7em;
-  font-size: 3.9rem;
+  font-size: 2.3rem;
   color: #FFF;
   text-shadow: 1px 1px 1px #152D65;
+  text-align: left;
+
+  i {
+    font-size: 1.4rem
+  }
 }
 
 .slider-bg {
@@ -165,6 +170,10 @@
   .slides,
   li {
     height: 100%;
+  }
+
+  .slides {
+    list-style: circle;
   }
 
   @media (min-width: $screen-md-min) {
@@ -376,8 +385,20 @@
 }
 
 .banner-info {
+  background-color: rgba(0,0,0,0.5);
   position: relative;
-  top: 5%;
+  float: left;
+  padding: 1.2em;
+  width: 20%;
+  height: 100%;
+  min-width: 200px;
+
+  a {
+    bottom: 20px;
+    position: absolute;
+    left: 36%;
+  }
+
 }
 
 .col-centered {
