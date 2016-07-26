@@ -2,22 +2,22 @@
     <div class="profile-card">
         <div class="col-sm-4 text-left profile-box">
             <div class="profile-img">
-                <img class="" src="<?php echo ($this->user['avatar'] != '' ? $this->user['avatar'] : $this->serverUrl() . BASEDIR . '/res/imgs/no-profile.jpg');?>">
+                <img class="" src="<?php echo ($this->user['Foto'] != '' ? $this->user['Foto'] : $this->serverUrl() . BASEDIR . '/res/imgs/no-profile.jpg');?>">
             </div>
         </div>
         <div class="col-sm-8 profile-info">
             <div class="col-sm-12 text-left  profile-box">
-                <span class="emp-name"><?php echo $this->user['user_name']; ?></span>
+                <span class="emp-name"><?php echo $this->user['Nome']; ?></span>
             </div>
             <div class="col-sm-12 text-left  profile-box">
-                <span><?php echo $this->user['email']; ?></span>
+                <span><?php echo $this->user['E-mail']; ?></span>
             </div>
             <div class="col-sm-12 text-left  profile-box">
-                Fone:<span> <?php echo $this->user['phone']; ?></span>
+                Fone:<span> <?php echo $this->user['Fone']; ?></span>
             </div>
-            <div class="col-sm-12 text-left  profile-box">
-                <span><?php echo $this->user['role']; ?></span>
-            </div>
+<!--            <div class="col-sm-12 text-left  profile-box">-->
+<!--                <span>--><?php //echo $this->user['role']; ?><!--</span>-->
+<!--            </div>-->
             <div class="img-wm">
                 <img src="<?php echo $this->serverUrl() . BASEDIR; ?>/res/imgs/logo-tree.png" />
             </div>

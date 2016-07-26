@@ -140,4 +140,19 @@ class VistaRest extends Vista {
         $this->execute();
     }
 
+    public function getDadosUsuarios() {
+
+        $this->setVistaMethod('usuarios', 'listar');
+        $this->addFieldParam('Nome');
+        $this->addFieldParam('Fone');
+        $this->addFieldParam('E-mail');
+        $this->addFieldParam('Equipesite');
+        $this->addFieldParam('Foto');
+        $this->addFilterParam(array('Equipesite' => array('!=','')));
+        $this->addOrderParam('Equipesite', 'asc');
+        $this->execute();
+
+        return $this->getResult();
+    }
+
 }

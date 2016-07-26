@@ -14,31 +14,15 @@ class QuemSomosController extends Zend_Controller_Action {
         $params = $this->_request->getParams();
 
         $this->view->headScript()->appendFile($this->view->serverUrl().BASEDIR.'/res/js/quem-somos.js');
-
-        $users = Gravi_Service_ImochatService::getUsers();
+        $vista = Services::get('vista_rest');
+        $users = $vista->getDadosUsuarios();
 
         $grouped = array();
-        array_walk($users['users'], function($user) use(&$grouped){
-            $grouped[$user['group_name']][] = $user;
+        array_walk($users, function($user) use(&$grouped){
+            $group = String::RemoveIndex($user['Equipesite']);
+            $grouped[$group][] = $user;
         });
 
-        $sortList = array(
-            'Diretoria',
-            'Gerencia',
-            'Administrativo',
-            'Recepção',
-            'Consultoras'
-        );
-
-        $sorted = array();
-        array_walk($grouped, function(&$item, $key) use (&$sorted, $sortList){
-            !in_array($key, $sortList) || $sorted[$key] = $item;
-        });
-
-        $corretores = $grouped['Corretores'];
-
-        $this->view->groups     = $sorted;
-        $this->view->corretores = $corretores;
-
+        $this->view->users = $grouped;
     }
 }

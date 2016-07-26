@@ -26,21 +26,13 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <?php foreach ($this->groups as $group => $users) : ?>
+                        <?php foreach ($this->users as $group => $users) : ?>
                             <div class="col-lg-12">
                                 <h2 class="title-view-small"><?php echo $group; ?></h2>
                                 <?php foreach ($users as $user) : ?>
                                     <?php echo $this->partial('quem-somos/card.phtml', array('user' => $user)); ?>
                                 <?php endforeach; ?>
                             </div>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2 class="title-view-small">Corretores</h2>
-                        <?php foreach ($this->corretores as $corretor) : ?>
-                            <?php echo $this->partial('quem-somos/card.phtml', array('user' => $corretor)); ?>
                         <?php endforeach; ?>
                     </div>
                 </div>
