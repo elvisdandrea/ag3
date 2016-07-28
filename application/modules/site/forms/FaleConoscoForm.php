@@ -79,12 +79,21 @@ class Site_Form_FaleConoscoForm extends Zend_Form{
         $mensagem->setRequired(true);
         $mensagem->addValidator($notEmpty, true);
         //--------------------------------------------------------
+        $imovel = new Zend_Form_Element_Text('imovel');
+        $imovel->setAttrib('class', 'form-control');
+        $imovel->setAttrib('required', false);
+        $imovel->setAttrib('accesskey', 'i');
+        $imovel->setAttrib('cols', 1);
+        $imovel->setAttrib('rows', 1);
+        $imovel->setRequired(false);
+        //--------------------------------------------------
         $this->addElement($nome);
         $this->addElement($fone);
         $this->addElement($ddd);
         $this->addElement($email);
         $this->addElement($cidade);
         $this->addElement($mensagem);
+        $this->addElement($imovel);
 
         $this->setElementDecorators(array(
             'ViewHelper',

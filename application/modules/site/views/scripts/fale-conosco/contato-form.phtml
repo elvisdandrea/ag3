@@ -16,10 +16,12 @@
                                 <label for="email">E-mail <span class="red">*</span></label>
                                 <?php echo $this->form->email?>
                             </div>
-                            <div class="col-xs-12 col-md-7 form-group">
-                                <label for="email">Cidade </label>
-                                <?php echo $this->form->cidade?>
-                            </div>
+                            <?php if ($this->proposta) : ?>
+                                <div class="col-xs-12 col-md-7 form-group">
+                                    <label for="email">Imóvel </label>
+                                    <?php echo $this->form->imovel;?>
+                                </div>
+                            <?php endif; ?>
                             <div class="col-xs-12 col-md-5 form-group">
                                 <label for="ddd">Telefone <span class="red">*</span></label>
                                 <div class="row">

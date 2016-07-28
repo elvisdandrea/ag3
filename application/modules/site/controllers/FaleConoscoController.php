@@ -12,6 +12,9 @@ class FaleConoscoController extends Zend_Controller_Action{
         $params = $this->_request->getParams();
         $this->view->headScript()->appendFile($this->view->serverUrl().BASEDIR.'/res/js/faleconosco.js');
 
+        $acao = $this->getRequest()->getParam('acao');
+        $this->view->proposta = $acao == 'proposta';
+
         if($this->_request->isPost()){
             try{
                 $vista = Services::get('vista_rest');

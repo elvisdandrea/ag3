@@ -54,9 +54,18 @@
                 <ul class="sub-menu">
                     <li><a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/listagem?finalidade=venda">BUSCA DE IMÓVEIS</a></li>
                     <li><a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/cadastro">CADASTRO</a></li>
+                    <li><a href="<?php echo $this->serverUrl() . BASEDIR; ?>/fale-conosco?acao=proposta">PROPOSTA</a></li>
+                    <li><a href="<?php echo $this->serverUrl() . BASEDIR; ?>/quem-somos">CORRETORES</a></li>
                 </ul>
             </li>
-            <li class="menu-item"><a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/listagem?finalidade=aluguel">LOCAÇÕES</a></li>
+            <li class="menu-item">
+                <a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/listagem?finalidade=aluguel">LOCAÇÕES</a>
+                <ul class="sub-menu">
+                    <li><a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/listagem?finalidade=aluguel">BUSCA DE IMÓVEIS</a></li>
+                    <li><a href="<?php echo $this->serverUrl() . BASEDIR; ?>/imoveis/cadastro">CADASTRO</a></li>
+                    <li><a href="<?php echo $this->serverUrl() . BASEDIR; ?>/fale-conosco?acao=proposta">PROPOSTA</a></li>
+                </ul>
+            </li>
             <li class="menu-item"><a href="<?php echo $this->serverUrl() . BASEDIR; ?>/fale-conosco">CONTATO</a></li>
         </ul>
     </div>
