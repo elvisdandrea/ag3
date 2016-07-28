@@ -205,3 +205,14 @@
     }
   }
 }
+
+.arrow-upper {
+  position: fixed;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  top: 10px;
+  margin-left: 10px;
+  opacity: .7;
+  z-index: 999999;
+}
