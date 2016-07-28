@@ -262,4 +262,8 @@ class ImoveisController extends Zend_Controller_Action{
         exit(true);
     }
 
+    public function cadastroAction() {
+
+    }
+
 }
