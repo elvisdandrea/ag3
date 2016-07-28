@@ -109,3 +109,4 @@ $(".lightbox").fancybox({
     border: 25,
     width: 450
 });
+
