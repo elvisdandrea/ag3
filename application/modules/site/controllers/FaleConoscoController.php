@@ -27,6 +27,8 @@ class FaleConoscoController extends Zend_Controller_Action{
                     'port' => $smtpData['port']
                 );
 
+//                print_r($smtpData); exit;
+
                 $transport = new Zend_Mail_Transport_Smtp($smtpData['smtp'], $config);
                 Zend_Mail::setDefaultTransport($transport);
 
@@ -44,10 +46,11 @@ class FaleConoscoController extends Zend_Controller_Action{
 
                 $mail->setBodyHtml($emailBody);
                 $mail->setFrom($config['contact_email'], $params['nome']);
-//                $mail->addTo($config['contact_email'], 'Terrasul');
 
 //              Teste Local
-                $mail->addTo('elvis@gravi.com.br', 'AG3');
+//                $mail->addTo('elvis@gravi.com.br', 'AG3');
+
+                $mail->addTo($config['contact_email'], 'AG3');
 
                 $assunto = isset($params['assunto']) ? $params['assunto'] : '';
                 $subjects = array(

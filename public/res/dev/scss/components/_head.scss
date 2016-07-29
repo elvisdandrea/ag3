@@ -240,3 +240,11 @@
   border-bottom: 1px solid #77cc53;
   width: 100%;
 }
+
+.horario {
+  position: absolute;
+  display: none;
+  @media (min-width: $screen-md-min) {
+    display: block;
+  }
+}

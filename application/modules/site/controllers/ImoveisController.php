@@ -266,4 +266,8 @@ class ImoveisController extends Zend_Controller_Action{
 
     }
 
+    public function simuladoresAction() {
+
+    }
+
 }
