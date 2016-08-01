@@ -260,7 +260,7 @@
   font-size: 16px;
   line-height: 28px;
   width: 23%;
-  top: 10px;
+  top: 25px;
   left: 340px;
 
   @media (min-width: $screen-md-min) {
@@ -277,11 +277,14 @@
 
   .horario-text {
     margin-left: 40px;
+    line-height: 14px !important;
   }
 
   .atendente {
-    margin-top: -14px;
-    left: -77px;
+    left: -37px;
+    margin-top: -10px;
+    width: 70px !important;
+    height: 70px !important;
 
     img {
       width: 177%;
