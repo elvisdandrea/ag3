@@ -172,7 +172,7 @@ class String {
      * @return  string                      - The CamelCased text
      */
     public static function camelCase($text) {
-        return ucwords(strtolower(utf8_encode($text)));
+        return ucwords(mb_convert_case($text, MB_CASE_LOWER, 'UTF-8'));
     }
 
     /**
