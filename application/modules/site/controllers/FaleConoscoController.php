@@ -39,7 +39,7 @@ class FaleConoscoController extends Zend_Controller_Action{
 
                 $emailBody = $html->render('email-body.phtml');
 
-                $mail = new Zend_Mail();
+                $mail = new Zend_Mail('UTF-8');
 
                 $configData = Gravi_Service_ImochatService::getSiteConfig();
                 $config = $configData['config'];
