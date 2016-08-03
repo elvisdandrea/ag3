@@ -73,7 +73,7 @@ class IndexController extends Zend_Controller_Action
 
         $pagination = array(
             'pagina'     => 1,
-            'quantidade' => 4
+            'quantidade' => 8
         );
 
         $vista->buscaImoveis($filtroWidget3, $pagination, $order);
