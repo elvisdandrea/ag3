@@ -57,6 +57,7 @@ class ImoveisController extends Zend_Controller_Action{
         if (isset($params['sacada']) && $params['sotao'] == 'on') $filtros['Sotao'] = 'Sim';
         if (isset($params['terrea']) && $params['terrea'] == 'on') $filtros['Terrea'] = 'Sim';
 
+        $this->view->isLancamento = isset($params['lancamento']) && strtolower($params['lancamento']) == 'sim';
 
         // TODO: validate destination
 
@@ -120,8 +121,9 @@ class ImoveisController extends Zend_Controller_Action{
         $vista->setPaginationParam($page, 12);
         $vista->buscaImoveis($filtros);
 
-        $this->view->params  = $params;
-        $this->view->imoveis = $vista->getResult();
+        $this->view->params     = $params;
+        $this->view->imoveis    = $vista->getResult();
+        $this->view->totalItems = $vista->getTotalItems();
 
         Gravi_Service_ImochatService::SaveSearch($filtros, $params);
 

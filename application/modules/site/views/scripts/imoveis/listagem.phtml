@@ -1,8 +1,13 @@
 <div class="container">
-    <?php echo $this->partial('index/busca_form.phtml', array(
+
+    <?php
+
+    $partial = $this->isLancamento ? 'index/busca_lanc_form.phtml' : 'index/busca_form.phtml';
+    echo $this->partial($partial, array(
         'listas' => $this->listas,
         'innerDivClass' => 'pesquisa-imoveis',
-        'buttonText' => 'Buscar novamente',
+        'buttonText'    => 'Buscar novamente',
+        'totalItems'    => $this->totalItems
     )); ?>
 
     <section class="resultado-busca">

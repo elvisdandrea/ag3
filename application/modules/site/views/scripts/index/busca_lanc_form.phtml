@@ -1,0 +1,45 @@
+<?php
+$params = Zend_Controller_Front::getInstance()->getRequest()->getParams();
+?>
+<section class="busca">
+    <div class="container">
+        <div class="tit-section text-center">
+            <h1>Busca de imóveis</h1>
+        </div>
+        <div class="form-busca">
+            <form action="<?php echo $this->serverUrl() . BASEDIR;?>/imoveis/listagem" class="row">
+                <input type="hidden" name="lancamento" value="Sim"/>
+                <div class="col-xs-6 col-sm-8 col-md-8 busca-total-items">
+                    <span class="total-items">
+                        <label><?php echo $this->totalItems; ?></label> empreendimentos encontrados
+                    </span>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                    <div class="form-group">
+                        <select name="faseobra" id="faseobra" class="form-control">
+                            <option value="">Fase da Obra</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                    <div class="form-group">
+                        <select name="cidade" id="cidade" class="form-control">
+                            <option value="">Cidade</option>
+                            <?php foreach ($this->listas['Cidade'] as $cidade) : ?>
+                                <option value="<?php echo $cidade; ?>" <?php if (isset($params['cidade']) && $params['cidade'] == $cidade) : ?> selected <?php endif; ?>><?php echo String::camelCase($cidade); ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-block">
+                            <i class="icon-magnifier13"></i>
+                            BUSCAR IMÓVEIS
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
