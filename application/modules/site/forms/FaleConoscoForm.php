@@ -39,7 +39,7 @@ class Site_Form_FaleConoscoForm extends Zend_Form{
         $nome->addValidator($notEmpty, true);
         //--------------------------------------------------------
         $fone = new Zend_Form_Element_Text('fone');
-        $fone->setAttrib('class', 'form-control');
+        $fone->setAttrib('class', 'form-control fone-input');
         $fone->setAttrib('required', true);
         $fone->setAttrib('accesskey', 'f');
         $fone->setRequired(true);

@@ -1,5 +1,3 @@
-$('html, body').scrollTop($('.title-section').offset().top - 5);
-
 $(document).on('submit', '#contato-imovel', function(e){
     e.preventDefault();
     $.ajax({

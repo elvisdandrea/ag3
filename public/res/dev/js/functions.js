@@ -110,3 +110,6 @@ $(".lightbox").fancybox({
     width: 450
 });
 
+$(document).ready(function() {
+    $('.fone-input').mask('(00) 0000-0000');
+});

@@ -32,6 +32,7 @@ gulp.task('uglify', function(){
             'js/jquery.flexslider.js',
             'js/jquery.validate.js',
             'js/jquery.fancybox.js',
+	    'js/jquery.mask.min.js',
             'js/functions.js'])
         .pipe(concat('main.min.js'))
         .pipe(uglify())
