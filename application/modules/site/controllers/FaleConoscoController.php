@@ -48,9 +48,9 @@ class FaleConoscoController extends Zend_Controller_Action{
                 $mail->setFrom($config['contact_email'], $params['nome']);
 
 //              Teste Local
-                $mail->addTo('elvis@gravi.com.br', 'AG3');
+//                $mail->addTo('elvis@gravi.com.br', 'AG3');
 
-//                $mail->addTo($config['contact_email'], 'AG3');
+                $mail->addTo($config['contact_email'], 'AG3');
 
                 $assunto = isset($params['assunto']) ? $params['assunto'] : '';
                 $subjects = array(
