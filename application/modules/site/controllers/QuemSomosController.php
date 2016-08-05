@@ -25,4 +25,9 @@ class QuemSomosController extends Zend_Controller_Action {
 
         $this->view->users = $grouped;
     }
+
+    public function empresaAction() {
+
+
+    }
 }

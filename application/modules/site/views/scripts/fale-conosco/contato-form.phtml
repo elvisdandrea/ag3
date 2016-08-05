@@ -18,7 +18,7 @@
                             </div>
                             <?php if ($this->proposta) : ?>
                                 <div class="col-xs-12 col-md-7 form-group">
-                                    <label for="email">Imóvel </label>
+                                    <label for="imovel">Imóvel </label>
                                     <?php echo $this->form->imovel;?>
                                 </div>
                             <?php endif; ?>
@@ -30,18 +30,24 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-md-12">
-                                <div class="form-group">
-                                    <label for="cidade-send">Assunto:*</label>
-                                    <select name="assunto" id="assunto" class="form-control">
-                                        <option value="">Escolha um assunto de seu interesse</option>
-                                        <option value="vanda">Venda</option>
-                                        <option value="aluguel">Aluguel</option>
-                                        <option value="trabalhe-conosco">Trabalhe Conosco</option>
-                                        <option value="outros">Outros</option>
-                                    </select>
+                            <?php if ($this->subject == 'venda') : ?>
+                                <input type="hidden" name="assunto" value="venda"/>
+                            <?php elseif ($this->subject == 'locacao') : ?>
+                                <input type="hidden" name="assunto" value="aluguel"/>
+                            <?php else : ?>
+                                <div class="col-xs-12 col-md-12">
+                                    <div class="form-group">
+                                        <label for="cidade-send">Assunto:*</label>
+                                        <select name="assunto" id="assunto" class="form-control">
+                                            <option value="">Escolha um assunto de seu interesse</option>
+                                            <option value="vanda">Venda</option>
+                                            <option value="aluguel">Aluguel</option>
+                                            <option value="trabalhe-conosco">Trabalhe Conosco</option>
+                                            <option value="outros">Outros</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
+                            <?php endif; ?>
                             <div class="col-xs-12 form-group">
                                 <label for="email">Mensagem <span class="red">*</span></label>
                                 <?php echo $this->form->mensagem?>

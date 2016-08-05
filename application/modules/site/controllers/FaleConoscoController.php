@@ -15,6 +15,8 @@ class FaleConoscoController extends Zend_Controller_Action{
         $acao = $this->getRequest()->getParam('acao');
         $this->view->proposta = $acao == 'proposta';
 
+        $this->view->subject = $this->getRequest()->getParam('s');
+
         if($this->_request->isPost()){
             try{
                 $vista = Services::get('vista_rest');
