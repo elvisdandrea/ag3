@@ -79,13 +79,13 @@ class ImoveisController extends Zend_Controller_Action{
 
         }
 
-        $title = 'Resultado da busca';
+        $title = '';
 
         $titles = array(
             'favoritos'         => 'Meus Favoritos',
-            'oportunidades'     => 'Grandes Oportunidades',
-            'lancamentos'       => 'Lançamentos',
-            'semelhantes'       => 'Imóveis Semelhantes'
+            'venda'             => 'Vendas',
+            'lancamentos'       => 'Empreendimentos',
+            'locacao'           => 'Locações'
         );
 
         if (isset($params['e'])) {

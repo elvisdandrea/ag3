@@ -4,7 +4,7 @@ $params = Zend_Controller_Front::getInstance()->getRequest()->getParams();
 <section class="busca">
     <div class="container">
         <div class="tit-section text-center">
-            <h1>Busca de imóveis</h1>
+            <h1>Busca de imóveis <?php echo isset($this->title) && $this->title != '' ? ' - ' . $this->title : ''; ?></h1>
         </div>
         <div class="categorias">
             <div class="row">
