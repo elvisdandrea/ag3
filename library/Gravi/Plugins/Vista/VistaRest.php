@@ -152,6 +152,7 @@ class VistaRest extends Vista {
         $this->addFieldParam('E-mail');
         $this->addFieldParam('Equipesite');
         $this->addFieldParam('Foto');
+        $this->addFieldParam('CRECI');
         $this->addFilterParam(array('Equipesite' => array('!=','')));
         $this->addOrderParam('Equipesite', 'asc');
         $this->setPaginationParam(1, 50);

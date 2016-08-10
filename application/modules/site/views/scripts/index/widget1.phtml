@@ -19,9 +19,11 @@
                                 <i class="icon-bed51"></i> <?php echo $widget1['Dormitorios']; ?> dorm.
                             </span>
                         <?php endif; ?>
-                        <span class="disp-block">
+                        <?php if (intval($widget1['Vagas']) > 0) : ?>
+                            <span class="disp-block">
                             <i class="icon-car171"></i> <?php echo $widget1['Vagas']; ?> vagas
                         </span>
+                        <?php endif; ?>
                     </div>
                     <div class="list-imoveis-price">
                         <span class="txt-price"><?php echo String::asCurrency($widget1['ValorVenda']); ?></span>

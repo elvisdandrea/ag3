@@ -12,12 +12,16 @@
             <div class="col-sm-12 text-left  profile-box">
                 <span><?php echo $this->user['E-mail']; ?></span>
             </div>
-            <div class="col-sm-12 text-left  profile-box">
-                Fone:<span> <?php echo $this->user['Fone']; ?></span>
-            </div>
-<!--            <div class="col-sm-12 text-left  profile-box">-->
-<!--                <span>--><?php //echo $this->user['role']; ?><!--</span>-->
-<!--            </div>-->
+            <?php if ($this->user['Fone'] != '') : ?>
+                <div class="col-sm-12 text-left  profile-box">
+                    Fone:<span> <?php echo $this->user['Fone']; ?></span>
+                </div>
+            <?php endif; ?>
+            <?php if ($this->user['CRECI'] != '') : ?>
+                <div class="col-sm-12 text-left  profile-box">
+                    CRECI:<span> <?php echo $this->user['CRECI']; ?></span>
+                </div>
+            <?php endif; ?>
             <div class="img-wm">
                 <img src="<?php echo $this->serverUrl() . BASEDIR; ?>/res/imgs/logo-tree.png" />
             </div>
