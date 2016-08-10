@@ -44,6 +44,10 @@ class VistaRest extends Vista {
         $this->execute();
 
         $result = $this->getResult();
+
+        asort($result['Cidade'], SORT_ASC);
+        array_unshift($result['Cidade'], 'SÃO LEOPOLDO');
+
         $buscaSession->busca = $result;
         return $result;
     }
