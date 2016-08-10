@@ -81,7 +81,6 @@ class Site_Form_FaleConoscoForm extends Zend_Form{
         //--------------------------------------------------------
         $imovel = new Zend_Form_Element_Text('imovel');
         $imovel->setAttrib('class', 'form-control');
-        $imovel->setAttrib('required', false);
         $imovel->setAttrib('accesskey', 'i');
         $imovel->setAttrib('cols', 1);
         $imovel->setAttrib('rows', 1);

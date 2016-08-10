@@ -80,7 +80,7 @@
 </nav>
 
 <div class="col-lg-12" id="ligamos-header" style="display: none;">
-    <form action="<?php echo $this->serverUrl() . BASEDIR; ?>/fale-conosco" method="post">
+    <form id="ligamos-form" action="<?php echo $this->serverUrl() . BASEDIR; ?>/fale-conosco" method="post">
         <div class="row">
             <div class="col-lg-12">
                 <div class="form-group">
@@ -102,6 +102,21 @@
             </div>
         </div>
     </form>
+</div>
+
+<div id="ligamos-resposta" class="modal fade" role="dialog" style="display: none;">
+    <div class="modal-dialog">
+        <div class="form-contato">
+            <div class="title-view">
+                <h3>Mensagem Enviada</h3>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    <h4 id="message"></h4>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="col-lg-12" id="whatsapp-header" style="display: none;">
