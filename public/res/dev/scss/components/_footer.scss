@@ -240,7 +240,6 @@
   box-shadow: 1px 1px 3px #666;
   left: 23px;
   z-index: 1;
-  margin-top: 30px;
 
   border: 1px solid #cccccc;
   background: #f6f8f9; /* Old browsers */
@@ -252,7 +251,10 @@
 
 .atendente img {
   width: 115%;
-  margin-left: 46%;
   -webkit-transform: translateX(-37%);
   height: 100%;
+}
+
+.horario-footer .atendente img {
+  margin-left: 46%;
 }
