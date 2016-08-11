@@ -55,12 +55,7 @@
                             <?php endif; ?>
                             <?php if (intval($this->imovel['ValorCondominio']) > 0) : ?>
                                 <span class="disp-block">
-                                    <i class="icon-dollar103"></i> <strong>Condomínio:</strong> <?php echo $this->imovel['ValorCondominio'];?> m²
-                                </span>
-                            <?php endif; ?>
-                            <?php if (intval($this->imovel['ValorIptu']) > 0) : ?>
-                                <span class="disp-block">
-                                    <i class="icon-dollar103"></i> <strong>IPTU:</strong> <?php echo String::asCurrency($this->imovel['ValorIptu']);?>
+                                    <i class="icon-dollar103"></i> <strong>Condomínio:</strong> <?php echo String::asCurrency($this->imovel['ValorCondominio']);?>
                                 </span>
                             <?php endif; ?>
                     </div>
