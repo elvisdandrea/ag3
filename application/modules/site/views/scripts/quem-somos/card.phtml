@@ -1,20 +1,20 @@
 <div class="col-xs-12 col-sm-6 col-lg-6">
     <div class="profile-card">
-        <div class="col-sm-4 text-left profile-box">
+        <div class="col-xs-4 col-sm-4 text-left profile-box">
             <div class="profile-img">
                 <img class="" src="<?php echo ($this->user['Foto'] != '' ? $this->user['Foto'] : $this->serverUrl() . BASEDIR . '/res/imgs/no-profile.jpg');?>">
             </div>
         </div>
-        <div class="col-sm-8 profile-info">
+        <div class="col-xs-8 col-sm-8 profile-info">
             <div class="col-sm-12 text-left  profile-box">
                 <span class="emp-name"><?php echo $this->user['Nome']; ?></span>
             </div>
             <div class="col-sm-12 text-left  profile-box">
                 <span><?php echo $this->user['E-mail']; ?></span>
             </div>
-            <?php if ($this->user['Fone'] != '') : ?>
+            <?php if ($this->user['Celular'] != '') : ?>
                 <div class="col-sm-12 text-left  profile-box">
-                    Fone:<span> <?php echo $this->user['Fone']; ?></span>
+                    Fone:<span> <?php echo $this->user['Celular']; ?></span>
                 </div>
             <?php endif; ?>
             <?php if ($this->user['CRECI'] != '') : ?>

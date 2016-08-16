@@ -149,11 +149,14 @@ class VistaRest extends Vista {
         $this->setVistaMethod('usuarios', 'listar');
         $this->addFieldParam('Nome');
         $this->addFieldParam('Fone');
+        $this->addFieldParam('Celular');
         $this->addFieldParam('E-mail');
         $this->addFieldParam('Equipesite');
         $this->addFieldParam('Foto');
         $this->addFieldParam('CRECI');
         $this->addFilterParam(array('Equipesite' => array('!=','')));
+        $this->addFilterParam(array('Exibirnosite' => 'Sim'));
+        $this->addFilterParam(array('Inativo' => 'Nao'));
         $this->addOrderParam('Equipesite', 'asc');
         $this->setPaginationParam(1, 50);
         $this->execute();

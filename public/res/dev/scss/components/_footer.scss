@@ -258,3 +258,12 @@
 .horario-footer .atendente img {
   margin-left: 46%;
 }
+
+.horario-footer .atendente {
+
+  @media (max-width: $screen-md-min) {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    top: -5px;
+  }
+}

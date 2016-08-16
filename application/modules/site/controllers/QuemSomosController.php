@@ -23,13 +23,16 @@ class QuemSomosController extends Zend_Controller_Action {
             $grouped[$group][] = $user;
         });
 
+        $title      = 'Equipe AG3 Imóveis';
         if ($this->getRequest()->getParam('t') == 'corretores') {
+            $title = 'Corretores';
             $grouped = array(
                 'Corretores' => $grouped['Corretores']
             );
         }
 
-
+        $this->view->showGroups = $this->getRequest()->getParam('t') != 'corretores';
+        $this->view->title = $title;
         $this->view->users = $grouped;
     }
 

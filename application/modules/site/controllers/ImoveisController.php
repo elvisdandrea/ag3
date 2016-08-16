@@ -35,7 +35,7 @@ class ImoveisController extends Zend_Controller_Action{
 
         empty($params['tipo'])       || $filtros['Categoria'] = $params['tipo'];
         empty($params['cidade'])     || $filtros['Cidade']    = $params['cidade'];
-        empty($params['bairro'])     || $filtros['Bairro']    = $params['bairros'];
+        empty($params['bairro'])     || $filtros['Bairro']    = $params['bairro'];
         empty($params['codigo'])     || $filtros['Codigo']    = $params['codigo'];
         empty($params['status'])     || $filtros['Status']    = $params['status'];
         empty($params['vagas'])      || $filtros['Vagas']     = $params['vagas'];
