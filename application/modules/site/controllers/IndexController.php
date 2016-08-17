@@ -24,6 +24,7 @@ class IndexController extends Zend_Controller_Action
     public function indexAction() {
 
         $this->view->headScript()->appendFile($this->view->serverUrl().BASEDIR.'/res/js/imoveis.js');
+        $this->view->headScript()->appendFile($this->view->serverUrl().BASEDIR.'/res/js/index.js');
 
         $vista = Services::get('vista_rest');
 
@@ -84,6 +85,23 @@ class IndexController extends Zend_Controller_Action
 
     public function changeListAction() {
 
+    }
+
+    public function tipoVendaAction(){
+        $type = strtolower($this->getRequest()->getQuery('type'));
+        if($type == 'aluguel'){
+            exit(json_encode(array(
+                'from' => $this->view->render('index/busca-fields/valores-locacao-de.phtml'),
+                'to' => $this->view->render('index/busca-fields/valores-locacao-ate.phtml')
+            )));
+        }
+
+        if($type == 'venda'){
+            exit(json_encode(array(
+                'from' => $this->view->render('index/busca-fields/valores-venda-de.phtml'),
+                'to' => $this->view->render('index/busca-fields/valores-venda-ate.phtml')
+            )));
+        }
     }
 
 }
