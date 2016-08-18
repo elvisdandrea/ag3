@@ -21,7 +21,7 @@
                         <?php endif; ?>
                         <?php if (intval($widget2['Vagas']) > 0) : ?>
                             <span class="disp-block">
-                            <i class="icon-car171"></i> <?php echo $widget2['Vagas']; ?> vagas
+                            <i class="icon-car171"></i> <?php echo $widget2['Vagas']; ?> <?php if (intval($widget2['Vagas']) > 1) : ?>vagas<?php else : ?>vaga<?php endif; ?>
                         </span>
                         <?php endif; ?>
                     </div>
