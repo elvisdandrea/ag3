@@ -113,3 +113,25 @@ $(".lightbox").fancybox({
 $(document).ready(function() {
     $('.fone-input').mask('(00) 0000-0000');
 });
+
+$(document).on('submit', '#ligamos-form', function(e){
+    e.preventDefault();
+    $.ajax({
+        url: $(this).attr('action'),
+        type: 'post',
+        data: $(this).serializeArray(),
+        success: function(r) {
+            var contatobox = $('#ligamos-resposta').show();
+            contatobox.find('#message').html(r);
+            $('#ligamos-resposta').trigger('click');
+            $('#ligamos-resposta')[0].reset();
+            setTimeout( function() {
+                $.fancybox.close();
+            },3000);
+            return false;
+        }
+    });
+    return false;
+});
+
+$('#ligamos-resposta').fancybox();

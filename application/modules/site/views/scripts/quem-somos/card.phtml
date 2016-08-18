@@ -12,14 +12,14 @@
             <div class="col-sm-12 text-left  profile-box">
                 <span><?php echo $this->user['E-mail']; ?></span>
             </div>
-            <?php if ($this->user['Celular'] != '') : ?>
-                <div class="col-sm-12 text-left  profile-box">
-                    Fone:<span> <?php echo $this->user['Celular']; ?></span>
-                </div>
-            <?php endif; ?>
             <?php if ($this->user['CRECI'] != '') : ?>
                 <div class="col-sm-12 text-left  profile-box">
                     CRECI:<span> <?php echo $this->user['CRECI']; ?></span>
+                </div>
+            <?php endif; ?>
+            <?php if ($this->user['Celular'] != '') : ?>
+                <div class="col-sm-12 text-left  profile-box">
+                    <i class="icon-socialnetwork179"></i><span style="font-size: 23px;"> <?php echo $this->user['Celular']; ?></span>
                 </div>
             <?php endif; ?>
             <div class="img-wm">
