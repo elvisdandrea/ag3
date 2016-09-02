@@ -9,19 +9,19 @@ $params = Zend_Controller_Front::getInstance()->getRequest()->getParams();
         <div class="form-busca">
             <form action="<?php echo $this->serverUrl() . BASEDIR;?>/imoveis/listagem" class="row">
                 <input type="hidden" name="lancamento" value="Sim"/>
-                <div class="col-xs-6 col-sm-8 col-md-8 busca-total-items">
+                <div class="col-xs-12 col-sm-8 col-md-8 busca-total-items">
                     <span class="total-items">
                         <label><?php echo $this->totalItems; ?></label> empreendimentos encontrados
                     </span>
                 </div>
-                <div class="col-xs-6 col-sm-4 col-md-3">
+                <div class="col-xs-12 col-sm-4 col-md-3">
                     <div class="form-group">
                         <select name="faseobra" id="faseobra" class="form-control">
                             <option value="">Fase da Obra</option>
                         </select>
                     </div>
                 </div>
-                <div class="col-xs-6 col-sm-4 col-md-3">
+                <div class="col-xs-12 col-sm-4 col-md-3">
                     <div class="form-group">
                         <select name="cidade" id="cidade" class="form-control">
                             <option value="">Cidade</option>

@@ -42,7 +42,7 @@
                                     <?php endif; ?>
                                 </div>
                                 <div class="list-imoveis-price">
-                                    <span class="txt-price"><?php echo String::asCurrency($imovel['ValorVenda']); ?></span>
+                                    <span class="txt-price"><?php echo ($imovel['MostrarValorVenda'] == 'Nao' ? 'Consulte' : String::asCurrency($imovel['ValorVenda'])); ?></span>
                                     <span class="plus">+</span>
                                 </div>
                             </a>

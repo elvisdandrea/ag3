@@ -45,7 +45,7 @@
                             <?php endif; ?>
                             <?php if (intval($this->imovel['Vagas']) > 0) : ?>
                                 <span class="disp-block">
-                                        <i class="icon-car171"></i> <?php echo $this->imovel['Vagas'] . (intval($this->imovel['Vagas']) > 1 ? ' vagas' : ' vagas') ?>
+                                        <i class="icon-car171"></i> <?php echo $this->imovel['Vagas'] . (intval($this->imovel['Vagas']) > 1 ? ' vagas' : ' vaga') ?>
                                     </span>
                             <?php endif; ?>
                             <?php if (intval($this->imovel['AreaTotal']) > 0) : ?>
@@ -61,7 +61,7 @@
                     </div>
                     <div class="list-imoveis-price">
                         <span class="txt-price">
-                            <?php echo String::asCurrency($this->imovel['ValorVenda']);?>
+                            <?php echo ($this->imovel['MostrarValorVenda'] == 'Nao' ? 'Consulte' : String::asCurrency($this->imovel['ValorVenda'])); ?>
                         </span>
                     </div>
                 </div>
@@ -91,6 +91,11 @@
                         </a>
                     </div>
                 </div>
+<!--                <div class="row actions-imovel">-->
+<!--                    <div class="col-xs-6 text-center">-->
+<!--                        <span>* Valores sujeitos a alterações sem aviso prévio.</span>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
         </div>
     </div>

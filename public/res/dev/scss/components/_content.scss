@@ -422,10 +422,15 @@
   margin: 20px 0px;
   background-color: #B7DCA0;
   height: 160px;
+
+  @media (max-width: 400px) {
+    padding: 0.2em;
+  }
 }
 
 .profile-box {
   width: 100%;
+  padding: 0 !important;
 }
 
 .profile-info {
@@ -437,6 +442,9 @@
 
 .emp-name {
   font-size: 27px;
+  @media (max-width: 1000px) {
+    font-size: 18px;
+  }
 }
 
 .img-wm {

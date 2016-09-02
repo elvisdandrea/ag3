@@ -26,7 +26,7 @@
                         <?php endif; ?>
                     </div>
                     <div class="list-imoveis-price">
-                        <span class="txt-price"><?php echo String::asCurrency($widget2['ValorVenda']); ?></span>
+                        <span class="txt-price"><?php echo ($widget2['MostrarValorVenda'] == 'Nao' ? 'Consulte' : String::asCurrency($widget2['ValorVenda'])); ?></span>
                         <span class="plus">+</span>
                     </div>
                 </a>
