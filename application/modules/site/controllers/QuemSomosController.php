@@ -18,20 +18,25 @@ class QuemSomosController extends Zend_Controller_Action {
         $users = $vista->getDadosUsuarios();
 
         $grouped = array();
-        array_walk($users, function($user) use(&$grouped){
-            $group = String::RemoveIndex($user['Equipesite']);
+        $groups  = array();
+
+        array_walk($users, function($user) use(&$grouped, &$groups){
+            $group    = String::RemoveIndex($user['Equipesite']);
+            $groups[] = strtolower($group);
             $grouped[$group][] = $user;
         });
 
-        $title      = 'Equipe AG3 Imóveis';
-        if ($this->getRequest()->getParam('t') == 'corretores') {
-            $title = 'Corretores';
+        $title       = 'Equipe AG3 Imóveis';
+        $filterGroup = $this->getRequest()->getParam('t');
+
+        if (in_array($filterGroup, $groups)) {
+            $title   = ucwords($filterGroup);
             $grouped = array(
-                'Corretores' => $grouped['Corretores']
+                $title => $grouped[$title]
             );
         }
 
-        $this->view->showGroups = $this->getRequest()->getParam('t') != 'corretores';
+        $this->view->showGroups = !in_array($filterGroup, $groups);
         $this->view->title = $title;
         $this->view->users = $grouped;
     }
