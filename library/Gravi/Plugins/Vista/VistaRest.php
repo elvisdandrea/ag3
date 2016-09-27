@@ -117,7 +117,8 @@ class VistaRest extends Vista {
         $this->addFieldParam('AreaPrivativa');
         $this->addFieldParam('AreaTerreno');
         $this->addFieldParam('DimensoesTerreno');
-        $this->addFieldParam(array('Foto' => array('Foto', 'FotoPequena', 'Destaque')));
+        $this->addFieldParam(array('Foto'  => array('Foto', 'FotoPequena', 'Destaque')));
+        $this->addFieldParam(array('Video' => array('Video', 'Descricao')));
         $this->addFieldParam('Caracteristicas');
         $this->addFieldParam('InfraEstrutura');
         $this->addFieldParam('Destinacao');
