@@ -200,6 +200,9 @@
     if (isset($video['Video']) && $video['Video'] != '') : ?>
         <div class="subtit-section">
             <h2>Vídeo do imóvel</h2>
+        </div>
+
+        <div class="view-imovel-descricao">
             <div class="row">
                 <iframe width="720" height="480" src="https://www.youtube.com/embed/<?php echo $video['Video'];?>" frameborder="0" allowfullscreen></iframe>
             </div>
@@ -213,8 +216,7 @@
 <div class="subtit-section">
     <h2>Localização do imóvel</h2>
 </div>
-<div id="mapa-imovel" class="map">
-</div>
+<div id="mapa-imovel" class="map"></div>
 
 </section>
 </div>
