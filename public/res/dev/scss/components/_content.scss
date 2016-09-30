@@ -44,6 +44,10 @@
   i {
     font-size: 1.4rem
   }
+
+  @media (max-width: $screen-md-min) {
+    font-size: 1.6rem;
+  }
 }
 
 .slider-bg {
@@ -112,6 +116,10 @@
     color: $blue;
     margin: 0;
     font-weight: normal;
+
+    @media (max-width: $screen-md-min) {
+      margin-top: 30px;
+    }
   }
 }
 
